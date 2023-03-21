@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentTalleres">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50sp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btntaller1"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:layout_marginRight="20dp"
+                    android:text="taller 1" />
+
+                <Button
+                    android:id="@+id/btntaller2"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:text="taller 2" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/btntaller3"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:layout_marginRight="20dp"
+                    android:text="taller 3" />
+
+                <Button
+                    android:id="@+id/btntaller4"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:text="taller 4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/btntaller5"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:layout_marginRight="20dp"
+                    android:text="taller 5" />
+
+                <Button
+                    android:id="@+id/btntaller6"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:text="taller 6" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="50sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/btntaller7"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:layout_marginRight="20dp"
+                    android:text="taller 7" />
+
+                <Button
+                    android:id="@+id/btntaller8"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:text="taller 8" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

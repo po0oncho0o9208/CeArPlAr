@@ -1,0 +1,74 @@
+package com.centrodeartes.cearplar;
+
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+public class FragmentTalleres extends Fragment implements View.OnClickListener {
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_talleres, container, false);
+        btn1 = view.findViewById(R.id.btntaller1);
+        btn1.setOnClickListener(this);
+        btn2 = view.findViewById(R.id.btntaller2);
+        btn2.setOnClickListener(this);
+        btn3 = view.findViewById(R.id.btntaller3);
+        btn3.setOnClickListener(this);
+        btn4 = view.findViewById(R.id.btntaller4);
+        btn4.setOnClickListener(this);
+        btn5 = view.findViewById(R.id.btntaller5);
+        btn5.setOnClickListener(this);
+        btn6 = view.findViewById(R.id.btntaller6);
+        btn6.setOnClickListener(this);
+        btn7 = view.findViewById(R.id.btntaller7);
+        btn7.setOnClickListener(this);
+        btn8 = view.findViewById(R.id.btntaller8);
+        btn8.setOnClickListener(this);
+        return view;
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        int cont = 0;
+        switch (v.getId()) {
+            case R.id.btntaller1:
+                cont = 5;
+                break;
+            case R.id.btntaller2:
+                cont = 6;
+                break;
+            case R.id.btntaller3:
+                cont = 7;
+                break;
+            case R.id.btntaller4:
+                cont = 8;
+                break;
+            case R.id.btntaller5:
+                cont = 9;
+                break;
+            case R.id.btntaller6:
+                cont = 10;
+                break;
+            case R.id.btntaller7:
+                cont = 11;
+                break;
+            case R.id.btntaller8:
+                cont = 12;
+                break;
+        }
+        Intent intent = new Intent(getContext(), Galeria.class);
+        intent.putExtra("id", cont);
+        startActivity(intent);
+    }
+}

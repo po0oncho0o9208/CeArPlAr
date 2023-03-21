@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentCursos">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50sp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btncurso1"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:layout_marginRight="20dp"
+                    android:text="curso 1" />
+
+                <Button
+                    android:id="@+id/btncurso2"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:text="curso 2" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/btncurso3"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:layout_marginRight="20dp"
+                    android:text="curso 3" />
+
+                <Button
+                    android:id="@+id/btncurso4"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:text="curso 4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50sp">
+
+                <Button
+                    android:id="@+id/btncurso5"
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:layout_marginRight="20dp"
+                    android:text="curso 5" />
+
+                <Button
+                    android:layout_width="150sp"
+                    android:layout_height="200sp"
+                    android:text="curso 5"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
