@@ -15,25 +15,61 @@
             android:orientation="vertical">
 
             <LinearLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="50sp"
                 android:gravity="center">
 
-                <Button
+                <LinearLayout
                     android:id="@+id/btncurso1"
-                    android:layout_width="150sp"
-                    android:layout_height="200sp"
-                    android:layout_marginRight="20dp"
-                    android:text="curso 1" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="@drawable/btnformat"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <Button
+                    <ImageView
+                        android:layout_width="120sp"
+                        android:layout_height="120sp"
+                        android:layout_margin="15sp"
+                        android:background="@drawable/dibujo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
+                        android:text="Dibujo y pintura\n"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/btncurso2"
-                    android:layout_width="150sp"
-                    android:layout_height="200sp"
-                    android:text="curso 2" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="@drawable/btnformat"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="120sp"
+                        android:layout_height="120sp"
+                        android:layout_margin="15sp"
+                        android:background="@drawable/escultura" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
+                        android:text="Escultura\n"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -44,18 +80,55 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp">
 
-                <Button
+                <LinearLayout
                     android:id="@+id/btncurso3"
-                    android:layout_width="150sp"
-                    android:layout_height="200sp"
-                    android:layout_marginRight="20dp"
-                    android:text="curso 3" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="@drawable/btnformat"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <Button
+                    <ImageView
+                        android:layout_width="120sp"
+                        android:layout_height="120sp"
+                        android:layout_margin="15sp"
+                        android:background="@drawable/marqueteria" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
+                        android:text="Marqueteria\n"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/btncurso4"
-                    android:layout_width="150sp"
-                    android:layout_height="200sp"
-                    android:text="curso 4" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="@drawable/btnformat"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="120sp"
+                        android:layout_height="120sp"
+                        android:layout_margin="15sp"
+                        android:background="@drawable/vidrio" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
+                        android:text="Vidrio\n"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -66,18 +139,54 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50sp">
 
-                <Button
+                <LinearLayout
                     android:id="@+id/btncurso5"
-                    android:layout_width="150sp"
-                    android:layout_height="200sp"
-                    android:layout_marginRight="20dp"
-                    android:text="curso 5" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="@drawable/btnformat"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <Button
-                    android:layout_width="150sp"
-                    android:layout_height="200sp"
-                    android:text="curso 5"
-                    android:visibility="invisible" />
+                    <ImageView
+                        android:layout_width="120sp"
+                        android:layout_height="120sp"
+                        android:layout_margin="15sp"
+                        android:background="@drawable/pirografia" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
+                        android:text="Pirograbado\n"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:background="@drawable/btnformat"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="120sp"
+                        android:layout_height="120sp"
+                        android:layout_margin="15sp"
+                        android:background="@drawable/vidrio" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
+                        android:text="Vidrio"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>

@@ -47,9 +47,12 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         layout.getBackground().setAlpha(215);
 
         titulos = new String[]{getResources().getString(R.string.dibujotit), getResources().getString(R.string.esculturatit), getResources().getString(R.string.marqtit)
-                , getResources().getString(R.string.vidriotit), getResources().getString(R.string.pirotit), getResources().getString(R.string.doradotit), getResources().getString(R.string.maderatit)};
+                , getResources().getString(R.string.vidriotit), getResources().getString(R.string.pirotit), getResources().getString(R.string.doradotit),
+                getResources().getString(R.string.maderatit),getResources().getString(R.string.lecturatit),getResources().getString(R.string.conchatit),getResources().getString(R.string.lecturatit)};
+
         textos = new String[]{getResources().getString(R.string.dibujotext), getResources().getString(R.string.esculturatext), getResources().getString(R.string.marqtext)
-                , getResources().getString(R.string.vidriotext), getResources().getString(R.string.pirotext), getResources().getString(R.string.doradotext), getResources().getString(R.string.maderatext)};
+                , getResources().getString(R.string.vidriotext), getResources().getString(R.string.pirotext), getResources().getString(R.string.doradotext),
+                getResources().getString(R.string.maderatext),getResources().getString(R.string.lecturatext)};
 
         titulo.setText(titulos[cont]);
         texto.setText(textos[cont]);

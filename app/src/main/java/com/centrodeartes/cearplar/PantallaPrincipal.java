@@ -1,11 +1,13 @@
 package com.centrodeartes.cearplar;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -31,6 +33,8 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
     private static final int REQUEST_CALL_PHONE = 0;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private static final int PERMISO_NOTIFICACIONES = 1;
+    LinearLayout btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +61,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         ubicacion.setOnClickListener(this);
         doctos.setOnClickListener(this);
         llamar.setOnClickListener(this);
-
+        pedirPermisonotificaciones();
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -135,5 +139,37 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
                 Toast.makeText(this, "Permisos denegados", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private void pedirPermisonotificaciones() {
+        //Comprobación 'Racional'
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                android.Manifest.permission.POST_NOTIFICATIONS)) {
+
+            android.app.AlertDialog AD;
+            android.app.AlertDialog.Builder ADBuilder = new android.app.AlertDialog.Builder(PantallaPrincipal.this);
+            ADBuilder.setMessage("Las notificaciones te mantienen al día, activalas para recibir informacion.");
+            ADBuilder.setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //Solicitamos permisos
+                    ActivityCompat.requestPermissions(
+                            PantallaPrincipal.this,
+                            new String[]{android.Manifest.permission.POST_NOTIFICATIONS},
+                            PERMISO_NOTIFICACIONES);
+                }
+            });
+
+            AD = ADBuilder.create();
+            AD.show();
+
+        } else {
+            ActivityCompat.requestPermissions(
+                    PantallaPrincipal.this,
+                    new String[]{Manifest.permission.POST_NOTIFICATIONS},
+                    PERMISO_NOTIFICACIONES);
+        }
+
+
     }
 }

@@ -8,12 +8,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
 public class FragmentCursos extends Fragment implements View.OnClickListener {
-    Button btn1, btn2, btn3, btn4, btn5;
+    LinearLayout btn1, btn2, btn3, btn4, btn5;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,19 +38,28 @@ public class FragmentCursos extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.btnanim);
         int cont = 0;
         switch (v.getId()) {
+            case R.id.btncurso1:
+                cont = 0;
+                btn1.startAnimation(anim);
+                break;
             case R.id.btncurso2:
                 cont = 1;
+                btn2.startAnimation(anim);
                 break;
             case R.id.btncurso3:
                 cont = 2;
+                btn3.startAnimation(anim);
                 break;
             case R.id.btncurso4:
                 cont = 3;
+                btn4.startAnimation(anim);
                 break;
             case R.id.btncurso5:
                 cont = 4;
+                btn5.startAnimation(anim);
                 break;
         }
         Intent intent = new Intent(getContext(), Galeria.class);

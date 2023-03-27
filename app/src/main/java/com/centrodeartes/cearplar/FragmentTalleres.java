@@ -9,9 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class FragmentTalleres extends Fragment implements View.OnClickListener {
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
+    LinearLayout btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

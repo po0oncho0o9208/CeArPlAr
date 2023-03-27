@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "596298438638",
+    "project_id": "centro-de-apya",
+    "storage_bucket": "centro-de-apya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596298438638:android:1afe42790686d44a0220ff",
+        "android_client_info": {
+          "package_name": "com.centrodeartes.cearplar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596298438638-cipafsqvdmui53e6g7g75rq6hv4pfebe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.centrodeartes.cearplar",
+            "certificate_hash": "c196213b39b5b2d0641b911965d599102dc7a117"
+          }
+        },
+        {
+          "client_id": "596298438638-i616afg7d745c3lfn4vf9dduo3hrctdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeRcnRcyrqiyPo62S_eh9lUuUtP1tEUAw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596298438638-i616afg7d745c3lfn4vf9dduo3hrctdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
