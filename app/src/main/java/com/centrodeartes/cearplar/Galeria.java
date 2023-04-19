@@ -48,20 +48,26 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
 
         titulos = new String[]{getResources().getString(R.string.dibujotit), getResources().getString(R.string.esculturatit), getResources().getString(R.string.marqtit)
                 , getResources().getString(R.string.vidriotit), getResources().getString(R.string.pirotit), getResources().getString(R.string.doradotit),
-                getResources().getString(R.string.maderatit),getResources().getString(R.string.lecturatit),getResources().getString(R.string.conchatit),getResources().getString(R.string.lecturatit)};
+                getResources().getString(R.string.maderatit),getResources().getString(R.string.maderatit),getResources().getString(R.string.maderatext),getResources().getString(R.string.maderatit)};
 
         textos = new String[]{getResources().getString(R.string.dibujotext), getResources().getString(R.string.esculturatext), getResources().getString(R.string.marqtext)
                 , getResources().getString(R.string.vidriotext), getResources().getString(R.string.pirotext), getResources().getString(R.string.doradotext),
-                getResources().getString(R.string.maderatext),getResources().getString(R.string.lecturatext)};
+                getResources().getString(R.string.maderatext),getResources().getString(R.string.maderatext)};
 
         titulo.setText(titulos[cont]);
         texto.setText(textos[cont]);
 
-        arrayList.add(R.mipmap.img1);
-        arrayList.add(R.mipmap.img2);
-        arrayList.add(R.mipmap.img3);
-        arrayList.add(R.mipmap.img4);
-        arrayList.add(R.mipmap.img5);
+        arrayList.add(R.mipmap.escul10);
+        arrayList.add(R.mipmap.escul);
+        arrayList.add(R.mipmap.escul1);
+        arrayList.add(R.mipmap.escul2);
+        arrayList.add(R.mipmap.escul3);
+        arrayList.add(R.mipmap.escul4);
+        arrayList.add(R.mipmap.escul5);
+        arrayList.add(R.mipmap.escul6);
+        arrayList.add(R.mipmap.escul77);
+        arrayList.add(R.mipmap.escul8);
+        arrayList.add(R.mipmap.escul9);
         btn = findViewById(R.id.btncloseimage);
         btn.setOnClickListener(this);
         viewpager = findViewById(R.id.viewpager);
