@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_700"
     tools:context=".Requisitos">
 
     <TextView
@@ -13,6 +14,7 @@
         android:text="DOCUMENTOS PARA INSCRIPCION POR PRIMERA VEZ:"
         android:textAlignment="center"
         android:textSize="25sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30sp"
         android:layout_marginRight="30sp"
+        android:textColor="#FFFFFF"
+
         android:text="*Copia de IFE o INE  \n\n*Comprobante de domicilio: luz, agua,predio,
         telefono(no mayor a 3 meses) \n\n*Parte frontal de carnet (unicamente derechohabientes)
         \n\n*Dictamen de pension (personas jubiladas o pensionadas)\n\n*Credencial INAPAM (personas mayores de 60 años)"

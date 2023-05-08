@@ -50,25 +50,30 @@
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu_colorNormal="@color/black"
+        app:menu_colorNormal="#8AFD6A"
         app:menu_fab_label="Menu">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/ubicacionfloating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@mipmap/papel"
             app:fab_label="Ubicacion y horario" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/requisitosfloating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@mipmap/mapsrc"
+
             app:fab_label="Requisitos" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/contactofloating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@mipmap/telf"
+
             app:fab_label="Contacto" />
 
 

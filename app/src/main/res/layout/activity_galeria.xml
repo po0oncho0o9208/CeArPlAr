@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A600BCD4"
     tools:context=".Galeria">
 
 
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Dibujo y pintura"
+            android:textColor="#000000"
             android:textSize="40sp" />
 
         <TextView
@@ -27,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20sp"
+            android:textColor="#000"
             android:text="Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\nGrupo 2 \nMartes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"
             android:textAlignment="center"
             android:textSize="20sp" />

@@ -57,17 +57,73 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         titulo.setText(titulos[cont]);
         texto.setText(textos[cont]);
 
-        arrayList.add(R.mipmap.escul10);
+
+        arrayList.add(R.mipmap.dibujo7);
+        arrayList.add(R.mipmap.dibujo2);
+        arrayList.add(R.mipmap.dibujo3);
+        arrayList.add(R.mipmap.dibujo4);
+        arrayList.add(R.mipmap.dibujo5);
+        arrayList.add(R.mipmap.dibujo1);
+        arrayList.add(R.mipmap.dibujo6);
+        arrayList.add(R.mipmap.dibujo8);
+
+        arrayList.add(R.mipmap.escultura1);
         arrayList.add(R.mipmap.escul);
-        arrayList.add(R.mipmap.escul1);
-        arrayList.add(R.mipmap.escul2);
-        arrayList.add(R.mipmap.escul3);
-        arrayList.add(R.mipmap.escul4);
-        arrayList.add(R.mipmap.escul5);
-        arrayList.add(R.mipmap.escul6);
-        arrayList.add(R.mipmap.escul77);
-        arrayList.add(R.mipmap.escul8);
-        arrayList.add(R.mipmap.escul9);
+        arrayList.add(R.mipmap.escultura2);
+        arrayList.add(R.mipmap.escultura3);
+        arrayList.add(R.mipmap.escultura4);
+        arrayList.add(R.mipmap.escultura5);
+
+
+        arrayList.add(R.mipmap.marqueteria2);
+        arrayList.add(R.mipmap.marqueteria1);
+        arrayList.add(R.mipmap.marqueteria3);
+        arrayList.add(R.mipmap.marqueteria4);
+        arrayList.add(R.mipmap.marqueteria5);
+        arrayList.add(R.mipmap.marqueteria6);
+        arrayList.add(R.mipmap.marqueteria7);
+        arrayList.add(R.mipmap.marqueteria8);
+        arrayList.add(R.mipmap.marqueteria9);
+
+        arrayList.add(R.mipmap.vidrio4);
+        arrayList.add(R.mipmap.vidrio2);
+        arrayList.add(R.mipmap.vidrio3);
+        arrayList.add(R.mipmap.vidrio1);
+        arrayList.add(R.mipmap.vidrio5);
+        arrayList.add(R.mipmap.vidrio6);
+
+        arrayList.add(R.mipmap.madera4);
+        arrayList.add(R.mipmap.madera2);
+        arrayList.add(R.mipmap.madera3);
+        arrayList.add(R.mipmap.madera1);
+        arrayList.add(R.mipmap.madera5);
+        arrayList.add(R.mipmap.madera6);
+        arrayList.add(R.mipmap.madera7);
+        arrayList.add(R.mipmap.madera8);
+
+        arrayList.add(R.mipmap.orfebreria6);
+        arrayList.add(R.mipmap.orfebreria2);
+        arrayList.add(R.mipmap.orfebreria3);
+        arrayList.add(R.mipmap.orfebreria4);
+        arrayList.add(R.mipmap.orfebreria5);
+        arrayList.add(R.mipmap.orfebreria1);
+        arrayList.add(R.mipmap.orfebreria7);
+        arrayList.add(R.mipmap.orfebreria8);
+        arrayList.add(R.mipmap.orfebreria9);
+        arrayList.add(R.mipmap.orfebreria10);
+
+        arrayList.add(R.mipmap.ceramica7);
+        arrayList.add(R.mipmap.img1);
+        arrayList.add(R.mipmap.ceramica3);
+        arrayList.add(R.mipmap.ceramica4);
+        arrayList.add(R.mipmap.ceramica5);
+        arrayList.add(R.mipmap.ceramica6);
+        arrayList.add(R.mipmap.ceramica2);
+        arrayList.add(R.mipmap.ceramica8);
+        arrayList.add(R.mipmap.ceramica9);
+
+
+
         btn = findViewById(R.id.btncloseimage);
         btn.setOnClickListener(this);
         viewpager = findViewById(R.id.viewpager);
