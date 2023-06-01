@@ -1,11 +1,14 @@
 package com.centrodeartes.cearplar;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -72,6 +75,41 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menuprincipal, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.btninsta) {
+            //Toast.makeText(this, "Abriendo Instagram", Toast.LENGTH_SHORT).show();
+            Uri uri = Uri.parse("http://instagram.com/_centroartesanal/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            intent.setPackage("com.instagram.android");
+
+            try {
+                startActivity(intent);
+                Toast.makeText(this, "Abriendo Instagram", Toast.LENGTH_SHORT).show();
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(this, "No tienes instalado Instagram, se mostrara el contenido en tu navegador", Toast.LENGTH_SHORT).show();
+                //No encontró la aplicación, abre la versión web.
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://instagram.com/_centroartesanal/")));
+
+            }
+        }
+        if (item.getItemId() == R.id.btnnews) {
+
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://instagram.com/_centroartesanal/")));
+            Toast.makeText(this, "hola news", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

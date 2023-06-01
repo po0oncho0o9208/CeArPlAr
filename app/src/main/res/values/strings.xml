@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CAI</string>
+    <string name="app_name">Centro de Artes Plasticas y Artesanias</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_galeria">Galeria</string>
@@ -25,6 +25,17 @@
     <string name="doradotext">"Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\nGrupo 2 \nMartes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"</string>
     <string name="maderatit">TALLA EN MADERA</string>
     <string name="maderatext">"Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\nGrupo 2 \nMartes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"</string>
+    <string name="conchatit">INCRUSTACIÓN EN CONCHA</string>
+    <string name="conchatext">"Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\nGrupo 2 \nMartes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"</string>
+    <string name="porcelanatit">PINTURA EN PORCELANA</string>
+    <string name="porcelanatext">"Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\nGrupo 2 \nMartes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"</string>
+    <string name="orfebreriatit">ORFEBRERIA</string>
+    <string name="orfebreriatext">"Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\nGrupo 2 \nMartes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"</string>
+    <string name="pieltit">PIEL</string>
+    <string name="pieltext">"Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\nGrupo 2 \nMartes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"</string>
+    <string name="tapiztit">TAPIZ</string>
+    <string name="tapiztext">"Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\nGrupo 2 \nMartes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"</string>
+
     <string name="title_activity_ubicacion2">Ubicacion2</string>
 
 </resources>
