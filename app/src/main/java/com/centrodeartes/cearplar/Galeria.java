@@ -60,70 +60,128 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         texto.setText(textos[cont]);
 
 
-        arrayList.add(R.mipmap.dibujo7);
-        arrayList.add(R.mipmap.dibujo2);
-        arrayList.add(R.mipmap.dibujo3);
-        arrayList.add(R.mipmap.dibujo4);
-        arrayList.add(R.mipmap.dibujo5);
-        arrayList.add(R.mipmap.dibujo1);
-        arrayList.add(R.mipmap.dibujo6);
-        arrayList.add(R.mipmap.dibujo8);
+        switch (cont) {
+            case 0:
+                arrayList.add(R.mipmap.dibujo7);
+                arrayList.add(R.mipmap.dibujo2);
+                arrayList.add(R.mipmap.dibujo3);
+                arrayList.add(R.mipmap.dibujo4);
+                arrayList.add(R.mipmap.dibujo5);
+                arrayList.add(R.mipmap.dibujo1);
+                arrayList.add(R.mipmap.dibujo6);
+                arrayList.add(R.mipmap.dibujo8);
+                break;
+            case 1:
+                arrayList.add(R.mipmap.escultura1);
+                arrayList.add(R.mipmap.escul);
+                arrayList.add(R.mipmap.escultura2);
+                arrayList.add(R.mipmap.escultura3);
+                arrayList.add(R.mipmap.escultura4);
+                arrayList.add(R.mipmap.escultura5);
+                break;
+            case 2:
+                arrayList.add(R.mipmap.marqueteria2);
+                arrayList.add(R.mipmap.marqueteria1);
+                arrayList.add(R.mipmap.marqueteria3);
+                arrayList.add(R.mipmap.marqueteria4);
+                arrayList.add(R.mipmap.marqueteria5);
+                arrayList.add(R.mipmap.marqueteria6);
+                arrayList.add(R.mipmap.marqueteria7);
+                arrayList.add(R.mipmap.marqueteria8);
+                arrayList.add(R.mipmap.marqueteria9);
+                break;
+            case 3:
+                arrayList.add(R.mipmap.vidrio4);
+                arrayList.add(R.mipmap.vidrio2);
+                arrayList.add(R.mipmap.vidrio3);
+                arrayList.add(R.mipmap.vidrio1);
+                arrayList.add(R.mipmap.vidrio5);
+                arrayList.add(R.mipmap.vidrio6);
+                break;
 
-        arrayList.add(R.mipmap.escultura1);
-        arrayList.add(R.mipmap.escul);
-        arrayList.add(R.mipmap.escultura2);
-        arrayList.add(R.mipmap.escultura3);
-        arrayList.add(R.mipmap.escultura4);
-        arrayList.add(R.mipmap.escultura5);
+            //pirograbado
+            case 4:
+                arrayList.add(R.mipmap.piro1);
+                arrayList.add(R.mipmap.piro2);
+                arrayList.add(R.mipmap.piro3);
+                arrayList.add(R.mipmap.piro4);
+                arrayList.add(R.mipmap.piro5);
+                arrayList.add(R.mipmap.piro6);
+                arrayList.add(R.mipmap.piro7);
 
+                //dorado y estofado
+            case 5:
+                arrayList.add(R.mipmap.dorado1);
+                arrayList.add(R.mipmap.dorado2);
+                arrayList.add(R.mipmap.dorado3);
+                arrayList.add(R.mipmap.dorado4);
+                arrayList.add(R.mipmap.dorado5);
+                arrayList.add(R.mipmap.dorado6);
+                arrayList.add(R.mipmap.dorado7);
 
-        arrayList.add(R.mipmap.marqueteria2);
-        arrayList.add(R.mipmap.marqueteria1);
-        arrayList.add(R.mipmap.marqueteria3);
-        arrayList.add(R.mipmap.marqueteria4);
-        arrayList.add(R.mipmap.marqueteria5);
-        arrayList.add(R.mipmap.marqueteria6);
-        arrayList.add(R.mipmap.marqueteria7);
-        arrayList.add(R.mipmap.marqueteria8);
-        arrayList.add(R.mipmap.marqueteria9);
+                break;
 
-        arrayList.add(R.mipmap.vidrio4);
-        arrayList.add(R.mipmap.vidrio2);
-        arrayList.add(R.mipmap.vidrio3);
-        arrayList.add(R.mipmap.vidrio1);
-        arrayList.add(R.mipmap.vidrio5);
-        arrayList.add(R.mipmap.vidrio6);
+            case 6:
+                arrayList.add(R.mipmap.madera4);
+                arrayList.add(R.mipmap.madera2);
+                arrayList.add(R.mipmap.madera3);
+                arrayList.add(R.mipmap.madera1);
+                arrayList.add(R.mipmap.madera5);
+                arrayList.add(R.mipmap.madera6);
+                arrayList.add(R.mipmap.madera7);
+                arrayList.add(R.mipmap.madera8);
+                break;
+            //concha
+            case 7:
+                arrayList.add(R.mipmap.madera4);
+                break;
+            case 8:
+                arrayList.add(R.mipmap.ceramica7);
+                arrayList.add(R.mipmap.img1);
+                arrayList.add(R.mipmap.ceramica3);
+                arrayList.add(R.mipmap.ceramica4);
+                arrayList.add(R.mipmap.ceramica5);
+                arrayList.add(R.mipmap.ceramica6);
+                arrayList.add(R.mipmap.ceramica2);
+                arrayList.add(R.mipmap.ceramica8);
+                arrayList.add(R.mipmap.ceramica9);
+                break;
+            case 9:
+                arrayList.add(R.mipmap.orfebreria6);
+                arrayList.add(R.mipmap.orfebreria2);
+                arrayList.add(R.mipmap.orfebreria3);
+                arrayList.add(R.mipmap.orfebreria4);
+                arrayList.add(R.mipmap.orfebreria5);
+                arrayList.add(R.mipmap.orfebreria1);
+                arrayList.add(R.mipmap.orfebreria7);
+                arrayList.add(R.mipmap.orfebreria8);
+                arrayList.add(R.mipmap.orfebreria9);
+                arrayList.add(R.mipmap.orfebreria10);
+                break;
+            //piel
+            case 10:
+                arrayList.add(R.mipmap.piel1);
+                arrayList.add(R.mipmap.piel2);
+                arrayList.add(R.mipmap.piel3);
+                arrayList.add(R.mipmap.piel4);
+                arrayList.add(R.mipmap.piel5);
+                arrayList.add(R.mipmap.piel6);
+                arrayList.add(R.mipmap.piel7);
 
-        arrayList.add(R.mipmap.madera4);
-        arrayList.add(R.mipmap.madera2);
-        arrayList.add(R.mipmap.madera3);
-        arrayList.add(R.mipmap.madera1);
-        arrayList.add(R.mipmap.madera5);
-        arrayList.add(R.mipmap.madera6);
-        arrayList.add(R.mipmap.madera7);
-        arrayList.add(R.mipmap.madera8);
+                break;
+            //tapiz
+            case 11:
+                arrayList.add(R.mipmap.tapiz1);
+                arrayList.add(R.mipmap.tapiz2);
+                arrayList.add(R.mipmap.tapiz3);
+                arrayList.add(R.mipmap.tapiz4);
+                arrayList.add(R.mipmap.tapiz5);
+                arrayList.add(R.mipmap.tapiz6);
+                arrayList.add(R.mipmap.tapiz7);
+                arrayList.add(R.mipmap.tapiz8);
+                break;
 
-        arrayList.add(R.mipmap.orfebreria6);
-        arrayList.add(R.mipmap.orfebreria2);
-        arrayList.add(R.mipmap.orfebreria3);
-        arrayList.add(R.mipmap.orfebreria4);
-        arrayList.add(R.mipmap.orfebreria5);
-        arrayList.add(R.mipmap.orfebreria1);
-        arrayList.add(R.mipmap.orfebreria7);
-        arrayList.add(R.mipmap.orfebreria8);
-        arrayList.add(R.mipmap.orfebreria9);
-        arrayList.add(R.mipmap.orfebreria10);
-
-        arrayList.add(R.mipmap.ceramica7);
-        arrayList.add(R.mipmap.img1);
-        arrayList.add(R.mipmap.ceramica3);
-        arrayList.add(R.mipmap.ceramica4);
-        arrayList.add(R.mipmap.ceramica5);
-        arrayList.add(R.mipmap.ceramica6);
-        arrayList.add(R.mipmap.ceramica2);
-        arrayList.add(R.mipmap.ceramica8);
-        arrayList.add(R.mipmap.ceramica9);
-
+        }
 
         btn = findViewById(R.id.btncloseimage);
         btn.setOnClickListener(this);
