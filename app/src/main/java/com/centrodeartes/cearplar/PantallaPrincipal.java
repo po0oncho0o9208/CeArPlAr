@@ -88,7 +88,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.btninsta) {
             //Toast.makeText(this, "Abriendo Instagram", Toast.LENGTH_SHORT).show();
-            Uri uri = Uri.parse("http://instagram.com/_centroartesanal/");
+            Uri uri = Uri.parse("https://www.instagram.com/artesanias_ind/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             intent.setPackage("com.instagram.android");
 
@@ -99,18 +99,43 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
                 Toast.makeText(this, "No tienes instalado Instagram, se mostrara el contenido en tu navegador", Toast.LENGTH_SHORT).show();
                 //No encontró la aplicación, abre la versión web.
                 startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("http://instagram.com/_centroartesanal/")));
+                        Uri.parse("https://www.instagram.com/artesanias_ind/")));
 
             }
         }
+
+
+
+        if (item.getItemId() == R.id.face) {
+            //Toast.makeText(this, "Abriendo Instagram", Toast.LENGTH_SHORT).show();
+            Uri uri = Uri.parse("https://www.facebook.com/ArteSaludBienestar?locale=es_LA");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            intent.setPackage("com.facebook.android");
+
+            try {
+                startActivity(intent);
+                Toast.makeText(this, "Abriendo Facebook", Toast.LENGTH_SHORT).show();
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(this, "No tienes instalado Facebook, se mostrara el contenido en tu navegador", Toast.LENGTH_SHORT).show();
+                //No encontró la aplicación, abre la versión web.
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.facebook.com/ArteSaludBienestar?locale=es_LA")));
+
+            }
+        }
+
+
+
         if (item.getItemId() == R.id.btnnews) {
 
             startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("http://instagram.com/_centroartesanal/")));
+                    Uri.parse("https://centroartesanalindependencia.blogspot.com/")));
             Toast.makeText(this, "hola news", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
     @Override
     public void onClick(View v) {

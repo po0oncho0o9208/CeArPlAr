@@ -6,14 +6,14 @@ plugins {
 
 android {
     namespace 'com.centrodeartes.cearplar'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.centrodeartes.cearplar"
-        minSdk 28
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        minSdk 24
+        targetSdk 34
+        versionCode 5
+        versionName "1.5"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -35,7 +35,7 @@ android {
 
 dependencies {
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.gms:play-services-ads:21.5.0'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     implementation 'com.android.support:design:28.0.0'
@@ -47,7 +47,9 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.4.1'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.firebase:firebase-messaging:23.0.3'
+    implementation platform('com.google.firebase:firebase-bom:33.6.0')
     testImplementation 'junit:junit:4.13.2'
+    implementation 'com.google.firebase:firebase-analytics'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
