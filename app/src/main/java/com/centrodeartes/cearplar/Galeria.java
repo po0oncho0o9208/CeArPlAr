@@ -30,34 +30,42 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
     SliderAdapter adapter;
     private AdView mAdView;
     int cont;
-    TextView titulo, texto;
-    String[] titulos, textos;
+    TextView texto1, texto2;
+    String[] titulos, textos1, textos2;
     LinearLayout layout;
+    Button btnpresent, btntem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_galeria);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        titulo = findViewById(R.id.txvtit);
-        texto = findViewById(R.id.txvtxt);
+        texto1 = findViewById(R.id.txvtxt1);
+        texto2 = findViewById(R.id.txvtxt2);
+        btnpresent = findViewById(R.id.btnpresentacion);
+        btntem = findViewById(R.id.btntemario);
         Intent intent = getIntent();
         cont = intent.getIntExtra("id", 0);
         layout = findViewById(R.id.layoutgaleria);
         layout.getBackground().setAlpha(215);
-
         titulos = new String[]{getResources().getString(R.string.dibujotit), getResources().getString(R.string.esculturatit), getResources().getString(R.string.marqtit)
                 , getResources().getString(R.string.vidriotit), getResources().getString(R.string.pirotit), getResources().getString(R.string.doradotit),
-                getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatext), getResources().getString(R.string.maderatit), getResources().getString(R.string.conchatit),
+                getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.conchatit),
                 getResources().getString(R.string.porcelanatit), getResources().getString(R.string.orfebreriatit), getResources().getString(R.string.pieltit), getResources().getString(R.string.tapiztit)};
 
-        textos = new String[]{getResources().getString(R.string.dibujotext), getResources().getString(R.string.esculturatext), getResources().getString(R.string.marqtext)
-                , getResources().getString(R.string.vidriotext), getResources().getString(R.string.pirotext), getResources().getString(R.string.doradotext),
-                getResources().getString(R.string.maderatext), getResources().getString(R.string.maderatext), getResources().getString(R.string.conchatext), getResources().getString(R.string.porcelanatext),
-                getResources().getString(R.string.orfebreriatext), getResources().getString(R.string.pieltext), getResources().getString(R.string.tapiztext)};
+        textos1 = new String[]{getResources().getString(R.string.dibujotext1), getResources().getString(R.string.esculturatext1), getResources().getString(R.string.marqtext1)
+                , getResources().getString(R.string.vidriotext1), getResources().getString(R.string.pirotext1), getResources().getString(R.string.doradotext1),
+                getResources().getString(R.string.maderatext1), getResources().getString(R.string.maderatext1), getResources().getString(R.string.conchatext1), getResources().getString(R.string.porcelanatext1),
+                getResources().getString(R.string.orfebreriatext1), getResources().getString(R.string.pieltext1), getResources().getString(R.string.tapiztext1)};
 
-        titulo.setText(titulos[cont]);
-        texto.setText(textos[cont]);
+        textos2 = new String[]{getResources().getString(R.string.dibujotext2), getResources().getString(R.string.esculturatext2), getResources().getString(R.string.marqtext2)
+                , getResources().getString(R.string.vidriotext2), getResources().getString(R.string.pirotext2), getResources().getString(R.string.doradotext2),
+                getResources().getString(R.string.maderatext2), getResources().getString(R.string.maderatext2), getResources().getString(R.string.conchatext2), getResources().getString(R.string.porcelanatext2),
+                getResources().getString(R.string.orfebreriatext2), getResources().getString(R.string.pieltext2), getResources().getString(R.string.tapiztext2)};
+        setTitle(titulos[cont]);
+        texto1.setText(textos1[cont]);
+        texto2.setText(textos2[cont]);
 
 
         switch (cont) {
@@ -200,6 +208,18 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        btnpresent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Galeria.this, "presentacion", Toast.LENGTH_LONG).show();
+            }
+        });
+        btntem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Galeria.this, "temario", Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 
