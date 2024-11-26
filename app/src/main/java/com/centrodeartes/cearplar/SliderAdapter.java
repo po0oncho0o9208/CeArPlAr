@@ -76,7 +76,7 @@ public class SliderAdapter extends PagerAdapter {
         return view;
     }
 
-    
+
 
 
     @Override
