@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A600BCD4"
     tools:context=".Galeria">
 
 
@@ -20,18 +20,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
+            android:background="@color/back"
             android:gravity="top"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="10sp">
 
             <TextView
+
                 android:id="@+id/txvtxt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"
                 android:layout_weight="1"
-                android:text="Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS \n\n"
+                android:text="Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS"
                 android:textAlignment="center"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <TextView
@@ -42,40 +45,86 @@
                 android:layout_weight="1"
                 android:text="Grupo 2 \n Martes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"
                 android:textAlignment="center"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_margin="10sp"
-            android:layout_marginVertical="8dp"
             android:background="#ffffff" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnpresentacion"
-                android:layout_width="150sp"
-                android:layout_height="100sp"
-                android:text="presentacion" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btntemario"
-                android:layout_width="150sp"
-                android:layout_height="100sp"
-                android:text="temario" />
+
+                <RelativeLayout
+                    android:id="@+id/btnpresentacion"
+                    android:layout_width="120sp"
+                    android:layout_height="80sp"
+                    android:layout_marginRight="50sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="120sp"
+                        android:layout_height="80sp"
+                        android:background="@drawable/btn2" />
+
+
+                </RelativeLayout>
+
+
+                <Button
+                    android:id="@+id/btntemario"
+                    android:layout_width="120dp"
+                    android:layout_height="80sp"
+                    android:background="@drawable/btntemario" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnweb"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginRight="50sp"
+                    android:background="@mipmap/www" />
+
+                <Button
+                    android:id="@+id/btnface"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginRight="50sp"
+                    android:background="@mipmap/facebook" />
+
+                <Button
+                    android:id="@+id/btnwhats"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:background="@mipmap/whatsapp" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="30sp"
+            android:layout_marginTop="10sp"
             android:layout_marginBottom="50sp"
             android:gravity="center" />
 

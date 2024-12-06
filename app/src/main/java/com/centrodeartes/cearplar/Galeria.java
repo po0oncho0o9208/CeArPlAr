@@ -1,6 +1,7 @@
 package com.centrodeartes.cearplar;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -8,10 +9,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.ads.AdRequest;
@@ -25,15 +28,16 @@ import java.util.Objects;
 
 public class Galeria extends AppCompatActivity implements View.OnClickListener {
     ArrayList<Integer> arrayList = new ArrayList<>();
-    Button btn;
     ViewPager viewpager, viewpagerfull;
     SliderAdapter adapter;
     private AdView mAdView;
     int cont;
     TextView texto1, texto2;
-    String[] titulos, textos1, textos2;
+    String[] titulos, textos1, textos2, pdfsc, pdfss;
     LinearLayout layout;
-    Button btnpresent, btntem;
+    Button btnclose, btntem, btnweb, btnwhats, btnface;
+    RelativeLayout btnpresent;
+    int[] fondos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,9 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         texto2 = findViewById(R.id.txvtxt2);
         btnpresent = findViewById(R.id.btnpresentacion);
         btntem = findViewById(R.id.btntemario);
+        btnweb = findViewById(R.id.btnweb);
+        btnwhats = findViewById(R.id.btnwhats);
+        btnface = findViewById(R.id.btnface);
         Intent intent = getIntent();
         cont = intent.getIntExtra("id", 0);
         layout = findViewById(R.id.layoutgaleria);
@@ -53,6 +60,11 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
                 , getResources().getString(R.string.vidriotit), getResources().getString(R.string.pirotit), getResources().getString(R.string.doradotit),
                 getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.conchatit),
                 getResources().getString(R.string.porcelanatit), getResources().getString(R.string.orfebreriatit), getResources().getString(R.string.pieltit), getResources().getString(R.string.tapiztit)};
+
+        fondos = new int[]{R.drawable.fondopintura, R.drawable.fondoescultura, R.drawable.fondomarqueteria, R.drawable.fondovidrio, R.drawable.fondopiro};
+        pdfss = new String[]{"Curso de dibujo y pintura.pdf", "Curso de escultura.pdf", "Curso de marqueteria.pdf", "Curso de vidrio.pdf", "Curso de pirograbado.pdf", "Curso de dorado.pdf", "Curso de talla en madera.pdf", "Curso de concha.pdf", "Curso de ceramica.pdf", "Curso de orfebreria.pdf", "Curso de piel.pdf", "Curso de grabado.pdf"};
+        pdfsc = new String[]{"semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf",
+                "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf"};
 
         textos1 = new String[]{getResources().getString(R.string.dibujotext1), getResources().getString(R.string.esculturatext1), getResources().getString(R.string.marqtext1)
                 , getResources().getString(R.string.vidriotext1), getResources().getString(R.string.pirotext1), getResources().getString(R.string.doradotext1),
@@ -66,7 +78,8 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         setTitle(titulos[cont]);
         texto1.setText(textos1[cont]);
         texto2.setText(textos2[cont]);
-
+        ConstraintLayout fondo = findViewById(R.id.fondo);
+        fondo.setBackground(getResources().getDrawable(fondos[cont]));
 
         switch (cont) {
             case 0:
@@ -191,11 +204,11 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
 
         }
 
-        btn = findViewById(R.id.btncloseimage);
-        btn.setOnClickListener(this);
+        btnclose = findViewById(R.id.btncloseimage);
+        btnclose.setOnClickListener(this);
         viewpager = findViewById(R.id.viewpager);
         viewpagerfull = findViewById(R.id.viewpagerfull);
-        adapter = new SliderAdapter(this, arrayList, btn, viewpagerfull, layout);
+        adapter = new SliderAdapter(this, arrayList, btnclose, viewpagerfull, layout);
         viewpager.setAdapter(adapter);
         viewpagerfull.setAdapter(adapter);
 
@@ -211,13 +224,33 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         btnpresent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Galeria.this, "presentacion", Toast.LENGTH_LONG).show();
+                abrirPDF(pdfsc[cont]);
+
             }
         });
         btntem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                abrirPDF(pdfss[cont]);
                 Toast.makeText(Galeria.this, "temario", Toast.LENGTH_LONG).show();
+            }
+        });
+        btnweb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirWeb("https://www.google.com");
+            }
+        });
+        btnwhats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enviarMensajePorWhatsApp("5215530064837", "Holi");
+            }
+        });
+        btnface.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirPerfilFace();
             }
         });
 
@@ -227,7 +260,7 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         layout.setVisibility(View.GONE);
         viewpagerfull.setVisibility(View.GONE);
-        btn.setVisibility(View.GONE);
+        btnclose.setVisibility(View.GONE);
         viewpager.setCurrentItem(viewpagerfull.getCurrentItem());
         adapter.isfull = false;
     }
@@ -239,4 +272,74 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         return false;
     }
 
+    private void abrirPDF(String nombre) {
+        Intent intent = new Intent(Galeria.this, PdfViewer.class);
+        intent.putExtra("nombrepdf", nombre);
+        startActivity(intent);
+    }
+
+    private void abrirWeb(String url) {
+        try {
+            // Crear un Intent con la acción ACTION_VIEW
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            // Establecer el URI del enlace
+            intent.setData(Uri.parse(url));
+            // Verificar si hay aplicaciones que puedan manejar este Intent
+            if (intent.resolveActivity(this.getPackageManager()) != null) {
+                // Iniciar la actividad
+                this.startActivity(intent);
+            } else {
+                // Manejo en caso de que no haya aplicaciones disponibles
+                System.out.println("No hay aplicaciones disponibles para abrir el enlace.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al intentar abrir el enlace: " + e.getMessage());
+        }
+    }
+
+    private void enviarMensajePorWhatsApp(String numero, String mensaje) {
+        try {
+            // Verificar que el número no esté vacío
+            if (numero == null || numero.isEmpty()) {
+                System.out.println("El número no puede estar vacío.");
+                return;
+            }
+
+            // Crear la URI con el número y mensaje
+            String uri = "https://wa.me/" + numero + "?text=" + Uri.encode(mensaje);
+
+            // Crear un Intent para abrir WhatsApp
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(uri));
+            // Verificar si hay aplicaciones que puedan manejar este Intent
+
+            if (intent.resolveActivity(this.getPackageManager()) != null) {
+                // Iniciar la actividad
+                this.startActivity(intent);
+            } else {
+                // Manejo en caso de que WhatsApp no esté instalado
+                Toast.makeText(this, "WhatsApp no está instalado en el dispositivo.", Toast.LENGTH_SHORT).show();
+                System.out.println("WhatsApp no está instalado en el dispositivo.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al intentar enviar el mensaje: " + e.getMessage());
+        }
+    }
+
+    public void abrirPerfilFace() {
+        String facebookId = "fb://profile/100000751622022";
+        String facebookUrl = "https://www.facebook.com/po0oncho0o/";
+
+        try {
+            // Abre la app de Facebook si está instalada
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(facebookId));
+            startActivity(intent);
+        } catch (Exception e) {
+            // Si no está instalada, abre en el navegador
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl));
+            startActivity(intent);
+        }
+    }
 }

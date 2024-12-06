@@ -8,7 +8,7 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/face"
-        android:icon="@drawable/facess"
+        android:icon="@mipmap/facebook"
         android:title="Face"
         app:showAsAction="ifRoom|withText" />
 

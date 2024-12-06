@@ -28,6 +28,9 @@
             android:name=".Galeria"
             android:exported="false" />
         <activity
+            android:name=".PdfViewer"
+            android:exported="false" />
+        <activity
             android:name=".Ubicacion"
             android:exported="false" />
         <activity
