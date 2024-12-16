@@ -130,6 +130,8 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -163,8 +165,9 @@
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:visibility="invisible"
+                    android:id="@+id/btncurso6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
@@ -176,17 +179,18 @@
                         android:layout_width="120sp"
                         android:layout_height="120sp"
                         android:layout_margin="15sp"
-                        android:background="@drawable/vidrio" />
+                        android:background="@drawable/ceramica" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15sp"
-                        android:text="Vidrio"
+                        android:text="Ceramica\n"
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
 
             </LinearLayout>
         </LinearLayout>

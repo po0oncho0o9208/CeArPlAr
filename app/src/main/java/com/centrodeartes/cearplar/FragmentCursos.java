@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 
 public class FragmentCursos extends Fragment implements View.OnClickListener {
-    LinearLayout btn1, btn2, btn3, btn4, btn5;
+    LinearLayout btn1, btn2, btn3, btn4, btn5, btn6;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +33,9 @@ public class FragmentCursos extends Fragment implements View.OnClickListener {
         btn4.setOnClickListener(this);
         btn5 = view.findViewById(R.id.btncurso5);
         btn5.setOnClickListener(this);
+        btn6 = view.findViewById(R.id.btncurso6);
+        btn6.setOnClickListener(this);
+
         return view;
     }
 
@@ -60,6 +63,11 @@ public class FragmentCursos extends Fragment implements View.OnClickListener {
             case R.id.btncurso5:
                 cont = 4;
                 btn5.startAnimation(anim);
+                break;
+
+            case R.id.btncurso6:
+                cont = 5;
+                btn6.startAnimation(anim);
                 break;
         }
         Intent intent = new Intent(getContext(), Galeria.class);

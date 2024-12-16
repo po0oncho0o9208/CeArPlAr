@@ -15,7 +15,43 @@
         android:layout_height="0dp"
         android:layout_marginBottom="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" >
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/menufloating"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            app:menu_colorNormal="#023D6A"
+            app:menu_fab_label="Menu">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/ubicacionfloating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/papel"
+                app:fab_label="Ubicacion y horario" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/requisitosfloating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mapsrc"
+
+                app:fab_label="Requisitos" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/contactofloating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/telf"
+                app:fab_label="Contacto" />
+
+
+        </com.github.clans.fab.FloatingActionMenu>
+    </androidx.viewpager.widget.ViewPager>
 
 
     <com.google.android.material.tabs.TabLayout
@@ -38,44 +74,6 @@
 
 
     </com.google.android.material.tabs.TabLayout>
-
-
-    <com.github.clans.fab.FloatingActionMenu
-        android:id="@+id/menufloating"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:menu_colorNormal="#023D6A"
-        app:menu_fab_label="Menu">
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/ubicacionfloating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/papel"
-            app:fab_label="Ubicacion y horario" />
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/requisitosfloating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/mapsrc"
-
-            app:fab_label="Requisitos" />
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/contactofloating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/telf"
-            app:fab_label="Contacto" />
-
-
-    </com.github.clans.fab.FloatingActionMenu>
 
 
     <com.google.android.gms.ads.AdView

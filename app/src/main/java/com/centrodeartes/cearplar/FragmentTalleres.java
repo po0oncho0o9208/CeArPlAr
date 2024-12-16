@@ -44,28 +44,28 @@ public class FragmentTalleres extends Fragment implements View.OnClickListener {
         int cont = 0;
         switch (v.getId()) {
             case R.id.btntaller1:
-                cont = 5;
-                break;
-            case R.id.btntaller2:
                 cont = 6;
                 break;
-            case R.id.btntaller3:
+            case R.id.btntaller2:
                 cont = 7;
                 break;
-            case R.id.btntaller4:
+            case R.id.btntaller3:
                 cont = 8;
                 break;
-            case R.id.btntaller5:
+            case R.id.btntaller4:
                 cont = 9;
                 break;
-            case R.id.btntaller6:
+            case R.id.btntaller5:
                 cont = 10;
                 break;
-            case R.id.btntaller7:
+            case R.id.btntaller6:
                 cont = 11;
                 break;
-            case R.id.btntaller8:
+            case R.id.btntaller7:
                 cont = 12;
+                break;
+            case R.id.btntaller8:
+                cont = 13;
                 break;
         }
         Intent intent = new Intent(getContext(), Galeria.class);
