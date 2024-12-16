@@ -65,8 +65,8 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
 
         titulos = new String[]{getResources().getString(R.string.dibujotit), getResources().getString(R.string.esculturatit), getResources().getString(R.string.marqtit)
                 , getResources().getString(R.string.vidriotit), getResources().getString(R.string.pirotit), "CERAMICA", getResources().getString(R.string.doradotit),
-                getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.conchatit),
-                getResources().getString(R.string.porcelanatit), getResources().getString(R.string.orfebreriatit), getResources().getString(R.string.pieltit), getResources().getString(R.string.tapiztit)};
+                getResources().getString(R.string.maderatit), getResources().getString(R.string.conchatit), getResources().getString(R.string.porcelanatit), getResources().getString(R.string.orfebreriatit), getResources().getString(R.string.pieltit),
+                getResources().getString(R.string.tapiztit)};
 
         fondos = new int[]{R.drawable.fondopintura, R.drawable.fondoescultura, R.drawable.fondomarqueteria, R.drawable.fondovidrio, R.drawable.fondopiro, R.drawable.ceram, R.drawable.fondodorado, R.drawable.fondomadera, R.drawable.fondoconcha, R.drawable.fondoporce, R.drawable.fondoorfe, R.drawable.fondopiel, R.drawable.fondotapiz};
 
