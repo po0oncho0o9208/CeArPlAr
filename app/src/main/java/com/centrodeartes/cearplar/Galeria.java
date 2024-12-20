@@ -37,7 +37,8 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
     LinearLayout layout;
     Button btnclose, btntem, btnweb, btnwhats, btnface;
     RelativeLayout btnpresent;
-    int[] fondos;
+    int[] fondos, profes;
+    Animation anim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +59,14 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         layout.getBackground().setAlpha(215);
         titulos = new String[]{getResources().getString(R.string.dibujotit), getResources().getString(R.string.esculturatit), getResources().getString(R.string.marqtit)
                 , getResources().getString(R.string.vidriotit), getResources().getString(R.string.pirotit), getResources().getString(R.string.doradotit),
-                getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.maderatit), getResources().getString(R.string.conchatit),
-                getResources().getString(R.string.porcelanatit), getResources().getString(R.string.orfebreriatit), getResources().getString(R.string.pieltit), getResources().getString(R.string.tapiztit)};
+                getResources().getString(R.string.maderatit), getResources().getString(R.string.conchatit), getResources().getString(R.string.porcelanatit), getResources().getString(R.string.orfebreriatit), getResources().getString(R.string.pieltit),
+                getResources().getString(R.string.tapiztit)};
 
-        fondos = new int[]{R.drawable.fondopintura, R.drawable.fondoescultura, R.drawable.fondomarqueteria, R.drawable.fondovidrio, R.drawable.fondopiro};
+        fondos = new int[]{R.drawable.fondopintura, R.drawable.fondoescultura, R.drawable.fondomarqueteria, R.drawable.fondovidrio, R.drawable.fondopiro, R.drawable.fondodorado, R.drawable.fondodorado, R.drawable.fondoconcha,
+                R.drawable.fondodorado, R.drawable.fondodorado, R.drawable.fondodorado, R.drawable.fondodorado};
+
+        profes = new int[]{R.drawable.btn1, R.drawable.btn2, R.drawable.btn3, R.drawable.btn4, R.drawable.btn3, R.drawable.btn3, R.drawable.btn3, R.drawable.btn3, R.drawable.btn3, R.drawable.btn3, R.drawable.btn3, R.drawable.btn3};
+
         pdfss = new String[]{"Curso de dibujo y pintura.pdf", "Curso de escultura.pdf", "Curso de marqueteria.pdf", "Curso de vidrio.pdf", "Curso de pirograbado.pdf", "Curso de dorado.pdf", "Curso de talla en madera.pdf", "Curso de concha.pdf", "Curso de ceramica.pdf", "Curso de orfebreria.pdf", "Curso de piel.pdf", "Curso de grabado.pdf"};
         pdfsc = new String[]{"semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf",
                 "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf"};
@@ -80,6 +85,9 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         texto2.setText(textos2[cont]);
         ConstraintLayout fondo = findViewById(R.id.fondo);
         fondo.setBackground(getResources().getDrawable(fondos[cont]));
+        btnpresent.setBackground(getResources().getDrawable(profes[cont]));
+
+        anim = AnimationUtils.loadAnimation(this, R.anim.btnanim);
 
         switch (cont) {
             case 0:
@@ -155,6 +163,11 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
             //concha
             case 7:
                 arrayList.add(R.mipmap.madera4);
+                arrayList.add(R.mipmap.madera4);
+                arrayList.add(R.mipmap.madera4);
+                arrayList.add(R.mipmap.madera4);
+                arrayList.add(R.mipmap.madera4);
+                arrayList.add(R.mipmap.madera4);
                 break;
             case 8:
                 arrayList.add(R.mipmap.ceramica7);
@@ -224,6 +237,7 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         btnpresent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnpresent.startAnimation(anim);
                 abrirPDF(pdfsc[cont]);
 
             }
@@ -231,25 +245,29 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         btntem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btntem.startAnimation(anim);
                 abrirPDF(pdfss[cont]);
-                Toast.makeText(Galeria.this, "temario", Toast.LENGTH_LONG).show();
             }
         });
         btnweb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                btnweb.startAnimation(anim);
                 abrirWeb("https://www.google.com");
             }
         });
         btnwhats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnwhats.startAnimation(anim);
                 enviarMensajePorWhatsApp("5215530064837", "Holi");
             }
         });
         btnface.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnface.startAnimation(anim);
                 abrirPerfilFace();
             }
         });
