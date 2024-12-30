@@ -8,14 +8,13 @@
     tools:context=".PantallaPrincipal">
 
 
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" >
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/menufloating"
@@ -54,13 +53,45 @@
     </androidx.viewpager.widget.ViewPager>
 
 
+    <LinearLayout
+        android:id="@+id/tabLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btncalendario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_weight="1"
+            android:background="@drawable/botona"
+            android:text="Calendario"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnnoticias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_weight="1"
+            android:background="@drawable/botona"
+            android:text="Noticias"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffea3b"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout1">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

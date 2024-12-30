@@ -31,6 +31,9 @@
             android:name=".PdfViewer"
             android:exported="false" />
         <activity
+            android:name=".Calendario"
+            android:exported="false" />
+        <activity
             android:name=".Ubicacion"
             android:exported="false" />
         <activity

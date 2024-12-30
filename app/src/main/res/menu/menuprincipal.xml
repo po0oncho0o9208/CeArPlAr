@@ -12,10 +12,6 @@
         android:title="Face"
         app:showAsAction="ifRoom|withText" />
 
-    <item
-        android:id="@+id/btnnews"
-        android:icon="@drawable/noticias"
-        android:title="Noticias"
-        app:showAsAction="ifRoom|withText" />
+
 
 </menu>

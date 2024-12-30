@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
 
     FloatingActionMenu actionMenu;
     FloatingActionButton ubicacion, doctos, llamar;
+    Button btnnoticias, btncalendario;
     private AdView mAdView;
     private static final int REQUEST_CALL_PHONE = 0;
     private TabLayout tabLayout;
@@ -52,6 +54,9 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         viewPager = findViewById(R.id.viewpager);
         tabLayout.setupWithViewPager(viewPager);
 
+        btncalendario = findViewById(R.id.btncalendario);
+        btnnoticias = findViewById(R.id.btnnoticias);
+
 
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         vpAdapter.addfragment(new FragmentCursos(), "Cursos");
@@ -64,6 +69,8 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         ubicacion.setOnClickListener(this);
         doctos.setOnClickListener(this);
         llamar.setOnClickListener(this);
+        btnnoticias.setOnClickListener(this);
+        btncalendario.setOnClickListener(this);
         pedirPermisonotificaciones();
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -105,7 +112,6 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         }
 
 
-
         if (item.getItemId() == R.id.face) {
             //Toast.makeText(this, "Abriendo Instagram", Toast.LENGTH_SHORT).show();
             Uri uri = Uri.parse("https://www.facebook.com/ArteSaludBienestar?locale=es_LA");
@@ -125,16 +131,8 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         }
 
 
-
-        if (item.getItemId() == R.id.btnnews) {
-
-            startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://centroartesanalindependencia.blogspot.com/")));
-            Toast.makeText(this, "hola news", Toast.LENGTH_SHORT).show();
-        }
         return super.onOptionsItemSelected(item);
     }
-
 
 
     @Override
@@ -148,6 +146,15 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
             case R.id.requisitosfloating:
                 intent = new Intent(this, Requisitos.class);
                 startActivity(intent);
+                break;
+            case R.id.btncalendario:
+                intent = new Intent(this, Calendario.class);
+                startActivity(intent);
+                break;
+            case R.id.btnnoticias:
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://centroartesanalindependencia.blogspot.com/")));
+                Toast.makeText(this, "hola news", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.contactofloating:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
