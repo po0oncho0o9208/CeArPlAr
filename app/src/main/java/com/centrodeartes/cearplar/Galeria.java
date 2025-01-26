@@ -57,7 +57,7 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         layout = findViewById(R.id.layoutgaleria);
         layout.getBackground().setAlpha(215);
 
-        semblanzas= new int[]{ R.drawable.btndibuji, R.drawable.btnescul, R.drawable.btnmarque, R.drawable.btn2, R.drawable.btnpiro, R.drawable.btnceramica, R.drawable.btndorado, R.drawable.btnmadera, R.drawable.btnconcha, R.drawable.btnporcelana, R.drawable.btnorfe,R.drawable.btnpiel,R.drawable.btntapiz
+        semblanzas= new int[]{ R.drawable.btndibuji, R.drawable.btnescul, R.drawable.btnmarque, R.drawable.btnvidrio, R.drawable.btnpiro, R.drawable.btnceramica, R.drawable.btndorado, R.drawable.btnmadera, R.drawable.btnconcha, R.drawable.btnporcelana, R.drawable.btnorfe,R.drawable.btnpiel,R.drawable.btntapiz
         };
 
         temarios= new int[]{ R.drawable.temadibu, R.drawable.temaescu, R.drawable.temamarque, R.drawable.btntemario, R.drawable.temapiro, R.drawable.temacera,  R.drawable.temadorado, R.drawable.temamadera,R.drawable.temaconcha, R.drawable.temaporcelana,R.drawable.temaorfe, R.drawable.temapiel,R.drawable.tematapiz
@@ -72,7 +72,7 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
 
         pdfss = new String[]{"Curso de dibujo y pintura.pdf", "Curso de escultura.pdf", "Curso de marqueteria.pdf", "Curso de vidrio.pdf", "Curso de pirograbado.pdf","Curso de ceramica.pdf", "Curso de dorado.pdf", "Curso de talla en madera.pdf", "Curso de concha.pdf", "Curso de ceramica.pdf", "Curso de orfebreria.pdf", "Curso de piel.pdf", "Curso de grabado.pdf"};
 
-        pdfsc = new String[]{"semblanza dibujo.pdf", "semblanza escultura.pdf", "semblanza marqueteria.pdf", "semblanza vidrio.pdf", "semblanza ceramica.pdf", "semblanza ceramica.pdf", "semblanza Antonio Pimentel.pdf",
+        pdfsc = new String[]{"semblanza dibujo.pdf", "semblanza escultura.pdf", "semblanza marqueteria.pdf", "semblanza vidrio.pdf", "", "semblanza ceramica.pdf", "semblanza Antonio Pimentel.pdf",
                 "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf"};
 
         textos1 = new String[]{getResources().getString(R.string.dibujotext1), getResources().getString(R.string.esculturatext1), getResources().getString(R.string.marqtext1)
@@ -187,15 +187,7 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
                 arrayList.add(R.mipmap.madera4);
                 break;
             case 9:
-                arrayList.add(R.mipmap.ceramica7);
-                arrayList.add(R.mipmap.img1);
-                arrayList.add(R.mipmap.ceramica3);
-                arrayList.add(R.mipmap.ceramica4);
-                arrayList.add(R.mipmap.ceramica5);
-                arrayList.add(R.mipmap.ceramica6);
-                arrayList.add(R.mipmap.ceramica2);
-                arrayList.add(R.mipmap.ceramica8);
-                arrayList.add(R.mipmap.ceramica9);
+                arrayList.add(R.drawable.btnporcelana);
                 break;
             case 10:
                 arrayList.add(R.mipmap.orfebreria6);

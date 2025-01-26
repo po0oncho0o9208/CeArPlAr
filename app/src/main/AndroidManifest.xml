@@ -18,7 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CeArPlAr"
         tools:targetApi="32">
-
+        <activity
+            android:name=".SliderAdapterCalendario"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -51,7 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
-
         <service
             android:name=".FirebaseNotifications"
             android:exported="false">
@@ -59,6 +60,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5211211432379253~5490640649" />
