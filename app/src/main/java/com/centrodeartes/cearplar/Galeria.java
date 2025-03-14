@@ -57,10 +57,10 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         layout = findViewById(R.id.layoutgaleria);
         layout.getBackground().setAlpha(215);
 
-        semblanzas= new int[]{ R.drawable.btndibuji, R.drawable.btnescul, R.drawable.btnmarque, R.drawable.btnvidrio, R.drawable.btnpiro, R.drawable.btnceramica, R.drawable.btndorado, R.drawable.btnmadera, R.drawable.btnconcha, R.drawable.btnporcelana, R.drawable.btnorfe,R.drawable.btnpiel,R.drawable.btntapiz
+        semblanzas= new int[]{ R.drawable.btndibuji, R.drawable.btnescul, R.drawable.btnmarque, R.drawable.btnvidrio, R.drawable.btnpiro, R.drawable.btnceramica, R.drawable.btndorado, R.drawable.btnmadera, R.drawable.btnconcha, R.drawable.btnorfe, R.drawable.btnorfe,R.drawable.btnpiel,R.drawable.btntapiz
         };
 
-        temarios= new int[]{ R.drawable.temadibu, R.drawable.temaescu, R.drawable.temamarque, R.drawable.btntemario, R.drawable.temapiro, R.drawable.temacera,  R.drawable.temadorado, R.drawable.temamadera,R.drawable.temaconcha, R.drawable.temaporcelana,R.drawable.temaorfe, R.drawable.temapiel,R.drawable.tematapiz
+        temarios= new int[]{ R.drawable.temadibu, R.drawable.temaescu, R.drawable.temamarque, R.drawable.btntemario, R.drawable.temapiro, R.drawable.temacera,  R.drawable.temadorado, R.drawable.temamadera,R.drawable.temaconcha, R.drawable.temaorfe,R.drawable.temaorfe, R.drawable.temapiel,R.drawable.tematapiz
         };
 
         titulos = new String[]{getResources().getString(R.string.dibujotit), getResources().getString(R.string.esculturatit), getResources().getString(R.string.marqtit)
@@ -70,10 +70,10 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
 
         fondos = new int[]{R.drawable.fondopintura, R.drawable.fondoescultura, R.drawable.fondomarqueteria, R.drawable.fondovidrio, R.drawable.fondopiro, R.drawable.ceram, R.drawable.fondodorado, R.drawable.fondomadera, R.drawable.fondoconcha, R.drawable.fondoporce, R.drawable.fondoorfe, R.drawable.fondopiel, R.drawable.fondotapiz};
 
-        pdfss = new String[]{"Curso de dibujo y pintura.pdf", "Curso de escultura.pdf", "Curso de marqueteria.pdf", "Curso de vidrio.pdf", "Curso de pirograbado.pdf","Curso de ceramica.pdf", "Curso de dorado.pdf", "Curso de talla en madera.pdf", "Curso de concha.pdf", "Curso de ceramica.pdf", "Curso de orfebreria.pdf", "Curso de piel.pdf", "Curso de grabado.pdf"};
+        pdfss = new String[]{"Curso de dibujo y pintura.pdf", "Curso de escultura.pdf", "Curso de marqueteria.pdf", "Curso de vidrio.pdf", "Curso de pirograbado.pdf","Curso de ceramica.pdf", "Curso de dorado.pdf", "Curso de talla en madera.pdf", "Curso de concha.pdf", "Curso esmalte.pdf", "Curso de orfebreria.pdf", "Curso de piel.pdf", ""};
 
-        pdfsc = new String[]{"semblanza dibujo.pdf", "semblanza escultura.pdf", "semblanza marqueteria.pdf", "semblanza vidrio.pdf", "", "semblanza ceramica.pdf", "semblanza Antonio Pimentel.pdf",
-                "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf", "semblanza Antonio Pimentel.pdf"};
+        pdfsc = new String[]{"semblanza dibujo.pdf", "semblanza escultura.pdf", "semblanza marqueteria.pdf", "semblanza vidrio.pdf", "", "semblanza ceramica.pdf", "",
+                "", "", "", "", "", "", ""};
 
         textos1 = new String[]{getResources().getString(R.string.dibujotext1), getResources().getString(R.string.esculturatext1), getResources().getString(R.string.marqtext1)
                 , getResources().getString(R.string.vidriotext1), getResources().getString(R.string.pirotext1), getResources().getString(R.string.doradotext1),
@@ -184,10 +184,24 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
                 break;
             //concha
             case 8:
-                arrayList.add(R.mipmap.madera4);
+                arrayList.add(R.mipmap.concha);
+                arrayList.add(R.mipmap.concha1);
+                arrayList.add(R.mipmap.concha2);
+                arrayList.add(R.mipmap.concha3);
+                arrayList.add(R.mipmap.concha4);
+                arrayList.add(R.mipmap.concha5);
+
+
                 break;
             case 9:
-                arrayList.add(R.drawable.btnporcelana);
+                arrayList.add(R.mipmap.esmalte1);
+                arrayList.add(R.mipmap.esmalte2);
+                arrayList.add(R.mipmap.esmalte3);
+                arrayList.add(R.mipmap.esmalte4);
+                arrayList.add(R.mipmap.esmalte5);
+                arrayList.add(R.mipmap.esmalte6);
+
+
                 break;
             case 10:
                 arrayList.add(R.mipmap.orfebreria6);

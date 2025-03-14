@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c31e24"
+    android:background="#3c6a63"
     tools:context=".PantallaPrincipal">
 
 
@@ -73,6 +73,16 @@
             android:textColor="@color/white" />
 
         <Button
+            android:id="@+id/btnquienes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_weight="1"
+            android:background="@drawable/botona"
+            android:text="¿Quiénes somos?"
+            android:textColor="@color/white" />
+
+        <Button
             android:id="@+id/btnnoticias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,6 +93,7 @@
             android:textColor="@color/white" />
 
     </LinearLayout>
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"

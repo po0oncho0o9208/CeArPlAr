@@ -33,7 +33,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
 
     FloatingActionMenu actionMenu;
     FloatingActionButton ubicacion, doctos, llamar;
-    Button btnnoticias, btncalendario;
+    Button btnnoticias, btncalendario, btnquienes;
     private AdView mAdView;
     private static final int REQUEST_CALL_PHONE = 0;
     private TabLayout tabLayout;
@@ -56,6 +56,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
 
         btncalendario = findViewById(R.id.btncalendario);
         btnnoticias = findViewById(R.id.btnnoticias);
+        btnquienes = findViewById(R.id.btnquienes);
 
 
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
@@ -71,6 +72,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         llamar.setOnClickListener(this);
         btnnoticias.setOnClickListener(this);
         btncalendario.setOnClickListener(this);
+        btnquienes.setOnClickListener(this);
         pedirPermisonotificaciones();
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -151,10 +153,15 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
                 intent = new Intent(this, Calendario.class);
                 startActivity(intent);
                 break;
+            case R.id.btnquienes:
+                intent = new Intent(this, QuienesSomos.class);
+                startActivity(intent);
+                break;
+
             case R.id.btnnoticias:
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://centroartesanalindependencia.blogspot.com/")));
-                Toast.makeText(this, "hola news", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "NOTICIAS CAI", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.contactofloating:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);

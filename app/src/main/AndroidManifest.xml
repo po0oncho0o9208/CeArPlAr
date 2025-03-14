@@ -19,6 +19,12 @@
         android:theme="@style/Theme.CeArPlAr"
         tools:targetApi="32">
         <activity
+            android:name=".ShowPdf"
+            android:exported="false" />
+        <activity
+            android:name=".QuienesSomos"
+            android:exported="false" />
+        <activity
             android:name=".SliderAdapterCalendario"
             android:exported="false" />
 

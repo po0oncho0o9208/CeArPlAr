@@ -93,7 +93,7 @@
                         android:layout_width="120sp"
                         android:layout_height="120sp"
                         android:layout_margin="15sp"
-                        android:background="@drawable/marqueteria" />
+                        android:background="@drawable/talla" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
                         android:layout_width="120sp"
                         android:layout_height="120sp"
                         android:layout_margin="15sp"
-                        android:background="@drawable/vidrio" />
+                        android:background="@drawable/vidrios" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -154,7 +154,7 @@
                         android:layout_width="120sp"
                         android:layout_height="120sp"
                         android:layout_margin="15sp"
-                        android:background="@drawable/pirografia" />
+                        android:background="@drawable/grabado" />
 
                     <TextView
                         android:layout_width="wrap_content"

@@ -8,7 +8,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="bannerid">ca-app-pub-3940256099942544/9214589741</string>
+    <string name="bannerid">ca-app-pub-5211211432379253/54675955090</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="dibujotit">DIBUJO Y PINTURA</string>
@@ -35,9 +35,9 @@
     <string name="conchatit">INCRUSTACIÓN EN CONCHA</string>
     <string name="conchatext1">"Grupo 1 \nLunes miercoles y viernes \n9:00-11:00 HRS \n11:00-13:00 HRS"</string>
     <string name="conchatext2">"Grupo 2 \nMartes y jueves \n11:00-13:00 HRS \n13:00-15:00 HRS"</string>
-    <string name="porcelanatit">PINTURA EN PORCELANA</string>
-    <string name="porcelanatext1">"Grupo 1 \nSIN HORARIOS DISPONIBLES"</string>
-    <string name="porcelanatext2">"Grupo 2 \n"</string>
+    <string name="porcelanatit">ESMALTE</string>
+    <string name="porcelanatext1">"Grupo 1 \nMartes y jueves \n09:00-11:00 HRS"</string>
+    <string name="porcelanatext2">""</string>
     <string name="orfebreriatit">ORFEBRERIA</string>
     <string name="orfebreriatext1">"Grupo 1 \nLunes miercoles y viernes \n11:00-13:00 HRS \n13:00-15:00 HRS"</string>
     <string name="orfebreriatext2">"Grupo 2 \nMartes y jueves \n11:00-13:00 HRS \n13:00-15:00 HRS"</string>
