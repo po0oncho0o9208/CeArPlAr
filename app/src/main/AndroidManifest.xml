@@ -19,6 +19,9 @@
         android:theme="@style/Theme.CeArPlAr"
         tools:targetApi="32">
         <activity
+            android:name=".Urls"
+            android:exported="false" />
+        <activity
             android:name=".ShowPdf"
             android:exported="false" />
         <activity

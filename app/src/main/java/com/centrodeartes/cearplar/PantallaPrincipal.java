@@ -28,6 +28,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class PantallaPrincipal extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,10 +36,15 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
     FloatingActionButton ubicacion, doctos, llamar;
     Button btnnoticias, btncalendario, btnquienes;
     private AdView mAdView;
+
+    Intent intent;
     private static final int REQUEST_CALL_PHONE = 0;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private static final int PERMISO_NOTIFICACIONES = 1;
+
+    private FirebaseAnalytics mFirebaseAnalytics;
+
     LinearLayout btn1;
 
     @Override
@@ -79,6 +85,8 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -159,10 +167,10 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.btnnoticias:
-                startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://centroartesanalindependencia.blogspot.com/")));
-                Toast.makeText(this, "NOTICIAS CAI", Toast.LENGTH_SHORT).show();
+                registroFirebaseAn("btnnoticias");
+                cambioActivityUrl("https://www.sntss.org.mx/promociones", "Noticias CAI.");
                 break;
+
             case R.id.contactofloating:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("Para obtener informacion comunicate al numero 55-55-95-05-98, deseas marcar ahora?")
@@ -184,6 +192,23 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
 
                 break;
         }
+
+    }
+
+    private void cambioActivityUrl(String url, String titulo) {
+
+        intent = new Intent(this, Urls.class);
+        intent.putExtra("url", url);
+        intent.putExtra("titulo", titulo);
+
+        startActivity(intent);
+        finish();
+    }
+
+    private void registroFirebaseAn(String buttonName) {
+        Bundle bundle = new Bundle();
+        bundle.putString("Nombre_boton", buttonName);
+        mFirebaseAnalytics.logEvent("click", bundle);
 
     }
 
