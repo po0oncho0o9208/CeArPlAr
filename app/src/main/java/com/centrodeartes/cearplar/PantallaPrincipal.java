@@ -5,8 +5,12 @@ import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -168,7 +172,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
 
             case R.id.btnnoticias:
                 registroFirebaseAn("btnnoticias");
-                cambioActivityUrl("https://www.sntss.org.mx/promociones", "Noticias CAI.");
+                cambioActivityUrl("https://centroartesanalindependencia.blogspot.com/", "Noticias CAI.");
                 break;
 
             case R.id.contactofloating:
@@ -242,6 +246,53 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
             }
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+            LayoutInflater inflater = getLayoutInflater();
+            View vi = inflater.inflate(R.layout.dialogoconfirm, null);
+            builder.setView(vi);
+            final android.app.AlertDialog dialog = builder.create();
+            quitarbordesdialogo(dialog);
+            //decidir despues si sera cancelable o no
+            dialog.setCancelable(false);
+            Button botonsi = vi.findViewById(R.id.botonsi);
+            botonsi.setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.cancel();
+                            PantallaPrincipal.super.onDestroy();
+                            System.exit(0);
+                        }
+                    }
+            );
+            Button botonno = vi.findViewById(R.id.botonno);
+            botonno.setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.cancel();
+
+                        }
+                    }
+            );
+            dialog.show();
+            //Metodos.dialogo( this, getLayoutInflater(), "¿seguro deseas salir de la aplicacion?", 0 );
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    public static void quitarbordesdialogo(android.app.AlertDialog dialog) {
+        ColorDrawable dialogColor = new ColorDrawable(Color.GRAY);
+        dialogColor.setAlpha(0);
+        dialog.getWindow().setBackgroundDrawable(dialogColor);
+    }
+
+
 
     private void pedirPermisonotificaciones() {
         //Comprobación 'Racional'

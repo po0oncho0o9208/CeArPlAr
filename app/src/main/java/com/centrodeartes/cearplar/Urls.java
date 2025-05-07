@@ -28,7 +28,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -111,7 +110,7 @@ public class Urls extends AppCompatActivity {
             });
 
             webview.loadUrl(url);
-            // webview.loadUrl("https://www.sntss.org.mx/promociones");
+            // webview.loadUrl("https://centroartesanalindependencia.blogspot.com/");
             webview.getSettings().setBuiltInZoomControls(true);
 
 
