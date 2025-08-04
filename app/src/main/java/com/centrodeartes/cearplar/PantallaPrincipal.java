@@ -1,16 +1,14 @@
 package com.centrodeartes.cearplar;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,8 +35,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 public class PantallaPrincipal extends AppCompatActivity implements View.OnClickListener {
 
     FloatingActionMenu actionMenu;
-    FloatingActionButton ubicacion, doctos, llamar;
-    Button btnnoticias, btncalendario, btnquienes;
+    FloatingActionButton ubicacion, doctos, llamar, btnquiene;
+    Button btnnoticias, btncalendario, btnperfil;
     private AdView mAdView;
 
     Intent intent;
@@ -66,7 +64,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
 
         btncalendario = findViewById(R.id.btncalendario);
         btnnoticias = findViewById(R.id.btnnoticias);
-        btnquienes = findViewById(R.id.btnquienes);
+        btnperfil = findViewById(R.id.btnperfil);
 
 
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
@@ -77,12 +75,14 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         ubicacion = findViewById(R.id.ubicacionfloating);
         doctos = findViewById(R.id.requisitosfloating);
         llamar = findViewById(R.id.contactofloating);
+        btnquiene = findViewById(R.id.quienessomos);
         ubicacion.setOnClickListener(this);
         doctos.setOnClickListener(this);
         llamar.setOnClickListener(this);
+        btnquiene.setOnClickListener(this);
         btnnoticias.setOnClickListener(this);
         btncalendario.setOnClickListener(this);
-        btnquienes.setOnClickListener(this);
+        btnperfil.setOnClickListener(this);
         pedirPermisonotificaciones();
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -149,10 +149,15 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
+            case R.id.quienessomos:
+                intent = new Intent(this, QuienesSomos.class);
+                startActivity(intent);
+                break;
             case R.id.ubicacionfloating:
                 intent = new Intent(this, Ubicacion.class);
                 startActivity(intent);
@@ -165,14 +170,21 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
                 intent = new Intent(this, Calendario.class);
                 startActivity(intent);
                 break;
-            case R.id.btnquienes:
-                intent = new Intent(this, QuienesSomos.class);
+            case R.id.btnperfil:
+                //intent = new Intent(this, QuienesSomos.class);
+                SharedPreferences prefs = getSharedPreferences("Preferencias", MODE_PRIVATE);
+                String nombre = prefs.getString("usuario", "");
+                if (nombre.isEmpty()) {
+                    intent = new Intent(this, BuscarMatricula.class);
+                } else {
+                    intent = new Intent(this, MostrarMatricula.class);
+                }
                 startActivity(intent);
                 break;
 
             case R.id.btnnoticias:
                 registroFirebaseAn("btnnoticias");
-                cambioActivityUrl("https://centroartesanalindependencia.blogspot.com/", "Noticias CAI.");
+                cambioActivityUrl("https://www.sntss.org.mx/promociones", "Noticias CAI.");
                 break;
 
             case R.id.contactofloating:
@@ -246,53 +258,6 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
             }
         }
     }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-            LayoutInflater inflater = getLayoutInflater();
-            View vi = inflater.inflate(R.layout.dialogoconfirm, null);
-            builder.setView(vi);
-            final android.app.AlertDialog dialog = builder.create();
-            quitarbordesdialogo(dialog);
-            //decidir despues si sera cancelable o no
-            dialog.setCancelable(false);
-            Button botonsi = vi.findViewById(R.id.botonsi);
-            botonsi.setOnClickListener(
-                    new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialog.cancel();
-                            PantallaPrincipal.super.onDestroy();
-                            System.exit(0);
-                        }
-                    }
-            );
-            Button botonno = vi.findViewById(R.id.botonno);
-            botonno.setOnClickListener(
-                    new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialog.cancel();
-
-                        }
-                    }
-            );
-            dialog.show();
-            //Metodos.dialogo( this, getLayoutInflater(), "¿seguro deseas salir de la aplicacion?", 0 );
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    public static void quitarbordesdialogo(android.app.AlertDialog dialog) {
-        ColorDrawable dialogColor = new ColorDrawable(Color.GRAY);
-        dialogColor.setAlpha(0);
-        dialog.getWindow().setBackgroundDrawable(dialogColor);
-    }
-
-
 
     private void pedirPermisonotificaciones() {
         //Comprobación 'Racional'

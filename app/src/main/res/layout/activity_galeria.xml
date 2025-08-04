@@ -34,7 +34,7 @@
                 android:layout_weight="1"
                 android:text="Grupo 1 \nLunes miercoles y viernes \n8:00-12:00 HRS \n12:30-16:00 HRS"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/colorletra"
                 android:textSize="20sp" />
 
             <TextView
@@ -45,7 +45,7 @@
                 android:layout_weight="1"
                 android:text="Grupo 2 \n Martes y jueves \n8:00-12:00 HRS \n12:30-16:00 HRS"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/colorletra"
                 android:textSize="20sp" />
         </LinearLayout>
 

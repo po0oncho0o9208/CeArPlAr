@@ -42,7 +42,6 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_galeria);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         texto1 = findViewById(R.id.txvtxt1);
@@ -57,7 +56,7 @@ public class Galeria extends AppCompatActivity implements View.OnClickListener {
         layout = findViewById(R.id.layoutgaleria);
         layout.getBackground().setAlpha(215);
 
-        semblanzas= new int[]{ R.drawable.eriks, R.drawable.tono, R.drawable.cristian, R.drawable.vid, R.drawable.piro, R.drawable.isa, R.drawable.venus, R.drawable.madera, R.drawable.barba, R.drawable.orfe, R.drawable.orfe,R.drawable.pieles,R.drawable.vidrio
+        semblanzas= new int[]{ R.drawable.btndibuji, R.drawable.btnescul, R.drawable.btnmarque, R.drawable.btnvidrio, R.drawable.btnpiro, R.drawable.btnceramica, R.drawable.btndorado, R.drawable.btnmadera, R.drawable.btnconcha, R.drawable.btnorfe, R.drawable.btnorfe,R.drawable.btnpiel,R.drawable.btntapiz
         };
 
         temarios= new int[]{ R.drawable.temadibu, R.drawable.temaescu, R.drawable.temamarque, R.drawable.btntemario, R.drawable.temapiro, R.drawable.temacera,  R.drawable.temadorado, R.drawable.temamadera,R.drawable.temaconcha, R.drawable.temaorfe,R.drawable.temaorfe, R.drawable.temapiel,R.drawable.tematapiz

@@ -110,7 +110,7 @@ public class Urls extends AppCompatActivity {
             });
 
             webview.loadUrl(url);
-            // webview.loadUrl("https://centroartesanalindependencia.blogspot.com/");
+            // webview.loadUrl("https://www.sntss.org.mx/promociones");
             webview.getSettings().setBuiltInZoomControls(true);
 
 

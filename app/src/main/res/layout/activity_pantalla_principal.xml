@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3c6a63"
+    android:background="@color/fondoverde"
     tools:context=".PantallaPrincipal">
 
 
@@ -18,6 +18,7 @@
 
 
     </androidx.viewpager.widget.ViewPager>
+
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menufloating"
         android:layout_width="match_parent"
@@ -27,6 +28,13 @@
         android:layout_marginBottom="50dp"
         app:menu_colorNormal="#023D6A"
         app:menu_fab_label="Menu">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/quienessomos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/quienes"
+            app:fab_label="Quienes somos" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/ubicacionfloating"
@@ -73,13 +81,13 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/btnquienes"
+            android:id="@+id/btnperfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
             android:layout_weight="1"
             android:background="@drawable/botona"
-            android:text="¿Quiénes somos?"
+            android:text="Mi perfil"
             android:textColor="@color/white" />
 
         <Button

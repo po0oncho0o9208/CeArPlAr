@@ -54,6 +54,12 @@
             android:name=".PantallaPrincipal"
             android:exported="false" />
         <activity
+            android:name=".BuscarMatricula"
+            android:exported="false" />
+        <activity
+            android:name=".MostrarMatricula"
+            android:exported="false" />
+        <activity
             android:name=".Splash"
             android:exported="true">
             <intent-filter>
