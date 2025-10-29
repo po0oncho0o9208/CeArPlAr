@@ -42,32 +42,25 @@ public class FragmentTalleres extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         int cont = 0;
-        switch (v.getId()) {
-            case R.id.btntaller1:
-                cont = 6;
-                break;
-            case R.id.btntaller2:
-                cont = 7;
-                break;
-            case R.id.btntaller3:
-                cont = 8;
-                break;
-            case R.id.btntaller4:
-                cont = 9;
-                break;
-            case R.id.btntaller5:
-                cont = 10;
-                break;
-            case R.id.btntaller6:
-                cont = 11;
-                break;
-            case R.id.btntaller7:
-                cont = 12;
-                break;
-            case R.id.btntaller8:
-                cont = 13;
-                break;
+
+        if (v.getId() == R.id.btntaller1) {
+            cont = 6;
+        } else if (v.getId() == R.id.btntaller2) {
+            cont = 7;
+        } else if (v.getId() == R.id.btntaller3) {
+            cont = 8;
+        } else if (v.getId() == R.id.btntaller4) {
+            cont = 9;
+        } else if (v.getId() == R.id.btntaller5) {
+            cont = 10;
+        } else if (v.getId() == R.id.btntaller6) {
+            cont = 11;
+        } else if (v.getId() == R.id.btntaller7) {
+            cont = 12;
+        } else if (v.getId() == R.id.btntaller8) {
+            cont = 13;
         }
+
         Intent intent = new Intent(getContext(), Galeria.class);
         intent.putExtra("id", cont);
         startActivity(intent);
