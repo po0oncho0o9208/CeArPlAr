@@ -10,9 +10,9 @@ android {
     defaultConfig {
         applicationId "com.centrodeartes.cearplar"
         minSdk 26
-        targetSdk 34
-        versionCode 21
-        versionName "2.1.0"
+        targetSdk 35
+        versionCode 24
+        versionName "2.4.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,8 +35,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:21.2.2'
     implementation platform('com.google.firebase:firebase-bom:33.6.0')
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.android.gms:play-services-maps:19.2.0'
     implementation 'com.github.clans:fab:1.6.4'
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services-ads-lite:24.6.0'
     implementation libs.play.services.ads
     implementation libs.appcompat
     implementation libs.material
