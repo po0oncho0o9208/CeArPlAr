@@ -157,63 +157,55 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         Intent intent;
-        switch (v.getId()) {
-            case R.id.quienessomos:
-                intent = new Intent(this, QuienesSomos.class);
-                startActivity(intent);
-                break;
-            case R.id.ubicacionfloating:
-                intent = new Intent(this, Ubicacion.class);
-                startActivity(intent);
-                break;
-            case R.id.requisitosfloating:
-                intent = new Intent(this, Requisitos.class);
-                startActivity(intent);
-                break;
-            case R.id.btncalendario:
-                intent = new Intent(this, Calendario.class);
-                startActivity(intent);
-                break;
-            case R.id.btnperfil:
-                //intent = new Intent(this, QuienesSomos.class);
-                SharedPreferences prefs = getSharedPreferences("Preferencias", MODE_PRIVATE);
-                String nombre = prefs.getString("usuario", "");
-                if (nombre.isEmpty()) {
-                    intent = new Intent(this, BuscarMatricula.class);
-                } else {
-                    intent = new Intent(this, MostrarMatricula.class);
-                }
-                startActivity(intent);
-                break;
 
-            case R.id.btnnoticias:
-                registroFirebaseAn("btnnoticias");
-                cambioActivityUrl("https://centroartesanalindependencia.blogspot.com/", "Noticias CAI.");
-                break;
+        if (v.getId() == R.id.quienessomos) {
+            intent = new Intent(this, QuienesSomos.class);
+            startActivity(intent);
 
-            case R.id.contactofloating:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("Para obtener informacion comunicate al numero 55-55-95-05-98, deseas marcar ahora?")
-                        .setPositiveButton("si", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                requestCallPhonePermission();
-                            }
-                        })
-                        .setNegativeButton("no", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                // User cancelled the dialog
-                            }
-                        });
-                // Create the AlertDialog object and return it
-                builder.create();
-                builder.show();
-                break;
-            default:
+        } else if (v.getId() == R.id.ubicacionfloating) {
+            intent = new Intent(this, Ubicacion.class);
+            startActivity(intent);
 
-                break;
+        } else if (v.getId() == R.id.requisitosfloating) {
+            intent = new Intent(this, Requisitos.class);
+            startActivity(intent);
+
+        } else if (v.getId() == R.id.btncalendario) {
+            intent = new Intent(this, Calendario.class);
+            startActivity(intent);
+
+        } else if (v.getId() == R.id.btnperfil) {
+            SharedPreferences prefs = getSharedPreferences("Preferencias", MODE_PRIVATE);
+            String nombre = prefs.getString("usuario", "");
+            if (nombre.isEmpty()) {
+                intent = new Intent(this, BuscarMatricula.class);
+            } else {
+                intent = new Intent(this, MostrarMatricula.class);
+            }
+            startActivity(intent);
+
+        } else if (v.getId() == R.id.btnnoticias) {
+            registroFirebaseAn("btnnoticias");
+            cambioActivityUrl("https://centroartesanalindependencia.blogspot.com/", "Noticias CAI.");
+
+        } else if (v.getId() == R.id.contactofloating) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Para obtener información comunícate al número 55-55-95-05-98, ¿deseas marcar ahora?")
+                    .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            requestCallPhonePermission();
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Usuario canceló el diálogo
+                        }
+                    });
+            builder.create();
+            builder.show();
         }
-
     }
+
 
     private void cambioActivityUrl(String url, String titulo) {
 
@@ -249,7 +241,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         startActivity(callIntent);
     }
 
-@Override
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);

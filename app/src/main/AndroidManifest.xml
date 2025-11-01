@@ -33,7 +33,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAd3j14RoeThFiYv5VtkAyDEuWyPqv7IKI" />
+            android:value="AIzaSyD5rv2wTqZs2VgE1Dut3VHHM1hAQg_ZYus" />
 
         <activity
             android:name=".Galeria"

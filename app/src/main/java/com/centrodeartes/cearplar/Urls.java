@@ -202,54 +202,50 @@ public class Urls extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                startActivity(new Intent(getBaseContext(), PantallaPrincipal.class)
-                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
-                finish();
-                break;
+        if (item.getItemId() == android.R.id.home) {
+            startActivity(new Intent(getBaseContext(), PantallaPrincipal.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+            finish();
 
-            case R.id.item2:
-                ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
-                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        } else if (item.getItemId() == R.id.item2) {
+            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 
-                if (networkInfo != null && networkInfo.isConnected()) {
-                    // Si hay conexión a Internet en este momento
+            if (networkInfo != null && networkInfo.isConnected()) {
+                // Si hay conexión a Internet en este momento
+                WebSettings webSettings = webview.getSettings();
+                webSettings.setJavaScriptEnabled(true);
 
-                    WebSettings webSettings = webview.getSettings();
-                    webSettings.setJavaScriptEnabled(true);
-                    webview.setWebChromeClient(new WebChromeClient() {
-                        public void onProgressChanged(WebView view, int progress) {
-                            // Activities and WebViews measure progress with different scales.
-                            // The progress meter will automatically disappear when we reach 100%
-                            Urls.this.setProgress(progress * 1000);
-                        }
-                    });
-                    webview.setWebViewClient(new WebViewClient() {
-                        @Override
-                        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                            super.onPageStarted(view, url, favicon);
-                            progresbar.setVisibility(View.VISIBLE);
-                            imv.setVisibility(View.VISIBLE);
-                            setTitle(" Cargando ");
-                        }
+                webview.setWebChromeClient(new WebChromeClient() {
+                    @Override
+                    public void onProgressChanged(WebView view, int progress) {
+                        Urls.this.setProgress(progress * 1000);
+                    }
+                });
 
-                        @Override
-                        public void onPageFinished(WebView view, String url) {
-                            super.onPageFinished(view, url);
-                            progresbar.setVisibility(View.GONE);
-                            imv.setVisibility(View.GONE);
-                            setTitle(titulo);
-                        }
+                webview.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                        super.onPageStarted(view, url, favicon);
+                        progresbar.setVisibility(View.VISIBLE);
+                        imv.setVisibility(View.VISIBLE);
+                        setTitle("Cargando");
+                    }
 
+                    @Override
+                    public void onPageFinished(WebView view, String url) {
+                        super.onPageFinished(view, url);
+                        progresbar.setVisibility(View.GONE);
+                        imv.setVisibility(View.GONE);
+                        setTitle(titulo);
+                    }
+                });
 
-                    });
-                    webview.loadUrl(url);
-                    webview.getSettings().setBuiltInZoomControls(true);
-                }
-                break;
-
+                webview.loadUrl(url);
+                webview.getSettings().setBuiltInZoomControls(true);
+            }
         }
+
 
         return super.onOptionsItemSelected(item);
     }

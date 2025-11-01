@@ -128,7 +128,7 @@
         android:layout_width="40sp"
         android:layout_height="40sp"
         android:layout_margin="10sp"
-        android:background="@drawable/admob_close_button_white_circle_black_cross"
+        android:background="@drawable/delete"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

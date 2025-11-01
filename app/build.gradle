@@ -1,7 +1,6 @@
 plugins {
-    id 'com.android.application'
-    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
-    id 'com.google.gms.google-services'
+    alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -10,12 +9,12 @@ android {
 
     defaultConfig {
         applicationId "com.centrodeartes.cearplar"
-        minSdk 24
+        minSdk 26
         targetSdk 35
-        versionCode 21
-        versionName "2.1"
+        versionCode 24
+        versionName "2.4.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -28,30 +27,25 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildFeatures {
-        viewBinding true
-    }
 }
 
 dependencies {
-    implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.1'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.gms:play-services-ads:21.5.0'
-    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.github.clans:fab:1.6.4'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.github.marain87:AndroidPdfViewer:3.2.8'
     implementation 'com.google.firebase:firebase-firestore:24.10.1'
     implementation 'com.google.firebase:firebase-analytics:21.2.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment:2.4.1'
-    implementation 'androidx.navigation:navigation-ui:2.4.1'
-    implementation 'com.google.android.gms:play-services-maps:18.1.0'
-    implementation 'com.google.firebase:firebase-messaging:23.0.3'
     implementation platform('com.google.firebase:firebase-bom:33.6.0')
-    testImplementation 'junit:junit:4.13.2'
     implementation 'com.google.firebase:firebase-analytics'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.google.android.gms:play-services-maps:19.2.0'
+    implementation 'com.github.clans:fab:1.6.4'
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services-ads-lite:24.6.0'
+    implementation libs.play.services.ads
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.firebase.messaging
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
 }
