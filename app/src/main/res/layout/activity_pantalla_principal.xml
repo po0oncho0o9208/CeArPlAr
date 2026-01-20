@@ -5,137 +5,131 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondoverde"
+    android:fitsSystemWindows="true"
+
     tools:context=".PantallaPrincipal">
 
+    <!-- Boto000nes superiores -->
+    <LinearLayout
+        android:id="@+id/tabLayout1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <Button
+            android:id="@+id/btncalendario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/botona"
+            android:text="Calendario"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnperfil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/botona"
+            android:text="Mi perfil"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btnnoticias"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/botona"
+            android:text="Noticias"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#ffea3b"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cursos"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Talleres"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Contenido -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="50sp"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Banner -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:adSize="BANNER"
+        app:adUnitId="@string/bannerid"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-
-    </androidx.viewpager.widget.ViewPager>
-
+    <!-- Floating Menu -->
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menufloating"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         app:menu_colorNormal="#023D6A"
-        app:menu_fab_label="Menu">
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/quienessomos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/quienes"
-            app:fab_label="Quienes somos" />
+            app:fab_label="Quienes somos"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/ubicacionfloating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/papel"
-            app:fab_label="Ubicacion y horario" />
+            app:fab_label="Ubicacion y horario"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/requisitosfloating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/mapsrc"
-
-            app:fab_label="Requisitos" />
+            app:fab_label="Requisitos"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/contactofloating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/telf"
-            app:fab_label="Contacto" />
-
-
+            app:fab_label="Contacto"/>
     </com.github.clans.fab.FloatingActionMenu>
 
-    <LinearLayout
-        android:id="@+id/tabLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/btncalendario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5sp"
-            android:layout_weight="1"
-            android:background="@drawable/botona"
-            android:text="Calendario"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/btnperfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5sp"
-            android:layout_weight="1"
-            android:background="@drawable/botona"
-            android:text="Mi perfil"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/btnnoticias"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5sp"
-            android:layout_weight="1"
-            android:background="@drawable/botona"
-            android:text="Noticias"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
-
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffea3b"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout1">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cursos" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Talleres" />
-
-
-    </com.google.android.material.tabs.TabLayout>
-
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:adSize="BANNER"
-        app:adUnitId="@string/bannerid"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

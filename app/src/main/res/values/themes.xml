@@ -1,11 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.CeArPlAr" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Primary brand color. -->
+        <!-- Colores principales -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryDark">@color/purple_700</item>
         <item name="colorAccent">@color/teal_200</item>
-        <!-- Customize your theme here. -->
+
+        <!-- Evita edge-to-edge / fullscreen -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryDark</item>
     </style>
     <style name="Theme.CeArPlAr.NoActionBar">
         <item name="windowActionBar">false</item>

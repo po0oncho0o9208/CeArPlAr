@@ -43,33 +43,33 @@ public class FragmentCursos extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.btnanim);
         int cont = 0;
-        switch (v.getId()) {
-            case R.id.btncurso1:
-                cont = 0;
-                btn1.startAnimation(anim);
-                break;
-            case R.id.btncurso2:
-                cont = 1;
-                btn2.startAnimation(anim);
-                break;
-            case R.id.btncurso3:
-                cont = 2;
-                btn3.startAnimation(anim);
-                break;
-            case R.id.btncurso4:
-                cont = 3;
-                btn4.startAnimation(anim);
-                break;
-            case R.id.btncurso5:
-                cont = 4;
-                btn5.startAnimation(anim);
-                break;
+        int id = v.getId();
 
-            case R.id.btncurso6:
-                cont = 5;
-                btn6.startAnimation(anim);
-                break;
+        if (id == R.id.btncurso1) {
+            cont = 0;
+            btn1.startAnimation(anim);
+
+        } else if (id == R.id.btncurso2) {
+            cont = 1;
+            btn2.startAnimation(anim);
+
+        } else if (id == R.id.btncurso3) {
+            cont = 2;
+            btn3.startAnimation(anim);
+
+        } else if (id == R.id.btncurso4) {
+            cont = 3;
+            btn4.startAnimation(anim);
+
+        } else if (id == R.id.btncurso5) {
+            cont = 4;
+            btn5.startAnimation(anim);
+
+        } else if (id == R.id.btncurso6) {
+            cont = 5;
+            btn6.startAnimation(anim);
         }
+
         Intent intent = new Intent(getContext(), Galeria.class);
         intent.putExtra("id", cont);
         startActivity(intent);

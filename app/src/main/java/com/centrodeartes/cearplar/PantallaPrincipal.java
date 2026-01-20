@@ -3,6 +3,7 @@ package com.centrodeartes.cearplar;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,12 +12,14 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -51,7 +54,9 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
 
     private FirebaseAnalytics mFirebaseAnalytics;
 
-    LinearLayout btn1;
+    SharedPreferences sharedPref;
+    int contcalifica;
+    String linkplaystore = "https://play.google.com/store/apps/details?id=com.centrodeartes.cearplar";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +105,20 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+        sharedPref = getSharedPreferences("inicio", Context.MODE_PRIVATE);
+        // validacion para mostrar dialogo de calificar app
+
+
+        if (!sharedPref.getBoolean("dialogcali", false)) {
+            contcalifica = sharedPref.getInt("califica", 0);
+            Log.d("dialogo califica", "" + contcalifica);
+            if (contcalifica == 12) {
+                dialogocalifica();
+                contcalifica = 0;
+            } else
+                contcalifica++;
+            sharedPref.edit().putInt("califica", contcalifica).apply();
+        }
     }
 
     @Override
@@ -157,61 +176,70 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         Intent intent;
-        switch (v.getId()) {
-            case R.id.quienessomos:
-                intent = new Intent(this, QuienesSomos.class);
-                startActivity(intent);
-                break;
-            case R.id.ubicacionfloating:
-                intent = new Intent(this, Ubicacion.class);
-                startActivity(intent);
-                break;
-            case R.id.requisitosfloating:
-                intent = new Intent(this, Requisitos.class);
-                startActivity(intent);
-                break;
-            case R.id.btncalendario:
-                intent = new Intent(this, Calendario.class);
-                startActivity(intent);
-                break;
-            case R.id.btnperfil:
-                //intent = new Intent(this, QuienesSomos.class);
-                SharedPreferences prefs = getSharedPreferences("Preferencias", MODE_PRIVATE);
-                String nombre = prefs.getString("usuario", "");
-                if (nombre.isEmpty()) {
-                    intent = new Intent(this, BuscarMatricula.class);
-                } else {
-                    intent = new Intent(this, MostrarMatricula.class);
-                }
-                startActivity(intent);
-                break;
+        int id = v.getId();
 
-            case R.id.btnnoticias:
-                registroFirebaseAn("btnnoticias");
-                cambioActivityUrl("https://centroartesanalindependencia.blogspot.com/", "Noticias CAI.");
-                break;
+        if (id == R.id.quienessomos) {
 
-            case R.id.contactofloating:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("Para obtener informacion comunicate al numero 55-55-95-05-98, deseas marcar ahora?")
-                        .setPositiveButton("si", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                requestCallPhonePermission();
-                            }
-                        })
-                        .setNegativeButton("no", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                // User cancelled the dialog
-                            }
-                        });
-                // Create the AlertDialog object and return it
-                builder.create();
-                builder.show();
-                break;
-            default:
+            intent = new Intent(this, QuienesSomos.class);
+            startActivity(intent);
 
-                break;
+        } else if (id == R.id.ubicacionfloating) {
+
+            intent = new Intent(this, Ubicacion.class);
+            startActivity(intent);
+
+        } else if (id == R.id.requisitosfloating) {
+
+            intent = new Intent(this, Requisitos.class);
+            startActivity(intent);
+
+        } else if (id == R.id.btncalendario) {
+
+            intent = new Intent(this, Calendario.class);
+            startActivity(intent);
+
+        } else if (id == R.id.btnperfil) {
+
+            SharedPreferences prefs = getSharedPreferences("Preferencias", MODE_PRIVATE);
+            String nombre = prefs.getString("usuario", "");
+
+            if (nombre.isEmpty()) {
+                intent = new Intent(this, BuscarMatricula.class);
+            } else {
+                intent = new Intent(this, MostrarMatricula.class);
+            }
+
+            startActivity(intent);
+
+        } else if (id == R.id.btnnoticias) {
+
+            registroFirebaseAn("btnnoticias");
+            cambioActivityUrl(
+                    "https://centroartesanalindependencia.blogspot.com/",
+                    "Noticias CAI."
+            );
+
+        } else if (id == R.id.contactofloating) {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Para obtener informacion comunicate al numero 55-55-95-05-98, deseas marcar ahora?")
+                    .setPositiveButton("si", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            requestCallPhonePermission();
+                        }
+                    })
+                    .setNegativeButton("no", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Usuario canceló
+                        }
+                    });
+
+            builder.create();
+            builder.show();
         }
+
 
     }
 
@@ -249,7 +277,7 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         startActivity(callIntent);
     }
 
-@Override
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
@@ -339,5 +367,46 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         }
 
 
+    }
+
+    private void dialogocalifica() {
+        final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(PantallaPrincipal.this);
+        final LayoutInflater inflater = getLayoutInflater();
+        View vi = inflater.inflate(R.layout.dialogocalifica, null);
+        builder.setView(vi);
+        final android.app.AlertDialog dialog = builder.create();
+        dialog.setCancelable(true);
+        quitarbordesdialogo(dialog);
+        Button botonsi = vi.findViewById(R.id.botonsi);
+        final CheckBox chbx = vi.findViewById(R.id.chbxcalifica);
+        botonsi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(linkplaystore)));
+                if (chbx.isChecked()) {
+                    sharedPref.edit().putBoolean("dialogcali", true).apply();
+                }
+                dialog.dismiss();
+            }
+        });
+        Button botonno = vi.findViewById(R.id.botonno);
+        botonno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (chbx.isChecked()) {
+                    sharedPref.edit().putBoolean("dialogcali", true).apply();
+                }
+                dialog.dismiss();
+            }
+        });
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                if (chbx.isChecked()) {
+                    sharedPref.edit().putBoolean("dialogcali", true).apply();
+                }
+            }
+        });
+        dialog.show();
     }
 }

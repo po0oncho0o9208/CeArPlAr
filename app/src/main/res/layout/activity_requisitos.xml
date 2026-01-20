@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_700"
-    tools:context=".Requisitos">
+    tools:context=".Requisitos"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:id="@+id/titulo"

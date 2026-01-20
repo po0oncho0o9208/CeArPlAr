@@ -27,13 +27,10 @@
         <activity
             android:name=".QuienesSomos"
             android:exported="false" />
-        <activity
-            android:name=".SliderAdapterCalendario"
-            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAd3j14RoeThFiYv5VtkAyDEuWyPqv7IKI" />
+            android:value="AIzaSyCE45gWBfkSIJFYBeeNTO7S6UO_yUuHBCA" />
 
         <activity
             android:name=".Galeria"

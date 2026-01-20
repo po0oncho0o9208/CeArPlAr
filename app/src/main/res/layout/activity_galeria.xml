@@ -5,6 +5,7 @@
     android:id="@+id/fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".Galeria">
 
 
@@ -128,7 +129,7 @@
         android:layout_width="40sp"
         android:layout_height="40sp"
         android:layout_margin="10sp"
-        android:background="@drawable/admob_close_button_white_circle_black_cross"
+        android:background="@drawable/equis"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

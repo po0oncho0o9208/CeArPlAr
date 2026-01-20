@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/teal_700"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtcalifica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal"
+        android:text="¿Te es util esta app? Calificala y ayudanos a mejorar"
+        android:textAlignment="center"
+        android:textColor="@color/colorletra"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:background="@mipmap/caicono" />
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/botonno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/botona"
+            android:text="no ahora"
+            android:textColor="@color/colorletra"/>
+
+        <Button
+            android:id="@+id/botonsi"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/botona"
+
+            android:text="si"
+            android:textColor="@color/colorletra" />
+
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/chbxcalifica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:buttonTint="@color/colorletra"
+        android:gravity="center"
+        android:text="Ya califique esta app"
+        android:textColor="@color/colorletra" />
+
+</LinearLayout>

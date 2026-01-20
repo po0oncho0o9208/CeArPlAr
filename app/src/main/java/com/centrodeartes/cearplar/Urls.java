@@ -202,54 +202,60 @@ public class Urls extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                startActivity(new Intent(getBaseContext(), PantallaPrincipal.class)
-                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
-                finish();
-                break;
+        int id = item.getItemId();
 
-            case R.id.item2:
-                ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
-                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (id == android.R.id.home) {
 
-                if (networkInfo != null && networkInfo.isConnected()) {
-                    // Si hay conexión a Internet en este momento
+            startActivity(
+                    new Intent(getBaseContext(), PantallaPrincipal.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            );
+            finish();
 
-                    WebSettings webSettings = webview.getSettings();
-                    webSettings.setJavaScriptEnabled(true);
-                    webview.setWebChromeClient(new WebChromeClient() {
-                        public void onProgressChanged(WebView view, int progress) {
-                            // Activities and WebViews measure progress with different scales.
-                            // The progress meter will automatically disappear when we reach 100%
-                            Urls.this.setProgress(progress * 1000);
-                        }
-                    });
-                    webview.setWebViewClient(new WebViewClient() {
-                        @Override
-                        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                            super.onPageStarted(view, url, favicon);
-                            progresbar.setVisibility(View.VISIBLE);
-                            imv.setVisibility(View.VISIBLE);
-                            setTitle(" Cargando ");
-                        }
+        } else if (id == R.id.item2) {
 
-                        @Override
-                        public void onPageFinished(WebView view, String url) {
-                            super.onPageFinished(view, url);
-                            progresbar.setVisibility(View.GONE);
-                            imv.setVisibility(View.GONE);
-                            setTitle(titulo);
-                        }
+            ConnectivityManager connectivityManager =
+                    (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 
-                    });
-                    webview.loadUrl(url);
-                    webview.getSettings().setBuiltInZoomControls(true);
-                }
-                break;
+            if (networkInfo != null && networkInfo.isConnected()) {
+                // Hay conexión a Internet
 
+                WebSettings webSettings = webview.getSettings();
+                webSettings.setJavaScriptEnabled(true);
+
+                webview.setWebChromeClient(new WebChromeClient() {
+                    @Override
+                    public void onProgressChanged(WebView view, int progress) {
+                        Urls.this.setProgress(progress * 1000);
+                    }
+                });
+
+                webview.setWebViewClient(new WebViewClient() {
+
+                    @Override
+                    public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                        super.onPageStarted(view, url, favicon);
+                        progresbar.setVisibility(View.VISIBLE);
+                        imv.setVisibility(View.VISIBLE);
+                        setTitle(" Cargando ");
+                    }
+
+                    @Override
+                    public void onPageFinished(WebView view, String url) {
+                        super.onPageFinished(view, url);
+                        progresbar.setVisibility(View.GONE);
+                        imv.setVisibility(View.GONE);
+                        setTitle(titulo);
+                    }
+                });
+
+                webview.loadUrl(url);
+                webview.getSettings().setBuiltInZoomControls(true);
+            }
         }
+
 
         return super.onOptionsItemSelected(item);
     }
