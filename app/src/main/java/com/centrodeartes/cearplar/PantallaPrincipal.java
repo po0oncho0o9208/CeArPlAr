@@ -2,6 +2,8 @@ package com.centrodeartes.cearplar;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -38,6 +41,7 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class PantallaPrincipal extends AppCompatActivity implements View.OnClickListener {
 
@@ -58,10 +62,78 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
     int contcalifica;
     String linkplaystore = "https://play.google.com/store/apps/details?id=com.centrodeartes.cearplar";
 
+    private static final String TAG = "NOTI_DEBUG";
+
+    private void cambiarClase(String clase) {
+
+        if (clase.equals("quienes")) {
+
+            intent = new Intent(this, QuienesSomos.class);
+            startActivity(intent);
+
+        } else if (clase.equals("ubica")) {
+
+            intent = new Intent(this, Ubicacion.class);
+            startActivity(intent);
+
+        } else if (clase.equals("requisitos")) {
+
+            intent = new Intent(this, Requisitos.class);
+            startActivity(intent);
+
+        } else if (clase.equals("calendario")) {
+
+            intent = new Intent(this, Calendario.class);
+            startActivity(intent);
+
+        }
+
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_principal);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    "canal_data",
+                    "Notificaciones con datos",
+                    NotificationManager.IMPORTANCE_HIGH
+            );
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+        FirebaseMessaging.getInstance().subscribeToTopic("todos")
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d("FCM_TOPIC", "Suscrito al topic TODOS");
+                    } else {
+                        Log.e("FCM_TOPIC", "Error al suscribirse");
+                    }
+                });
+
+        Log.d("NOTI_DEBUG", "onCreate");
+
+        Intent intent = getIntent();
+
+        if (intent != null && intent.getExtras() != null) {
+            String titulo = intent.getStringExtra("titulo");
+            String mensaje = intent.getStringExtra("mensaje");
+            String clase = intent.getStringExtra("clase");
+
+            Log.d("NOTI_DEBUG", "Extras recibidos");
+            Log.d("NOTI_DEBUG", titulo + " | " + mensaje + " | " + clase);
+
+
+            cambiarClase(clase);
+
+        } else {
+            Log.d("NOTI_DEBUG", "Intent sin extras");
+        }
+
         actionMenu = findViewById(R.id.menufloating);
         actionMenu.setClosedOnTouchOutside(true);
 
@@ -175,7 +247,6 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-        Intent intent;
         int id = v.getId();
 
         if (id == R.id.quienessomos) {
@@ -409,4 +480,6 @@ public class PantallaPrincipal extends AppCompatActivity implements View.OnClick
         });
         dialog.show();
     }
+
+
 }
